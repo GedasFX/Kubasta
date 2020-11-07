@@ -36,5 +36,7 @@ steps:
   displayName: 'Build React App'
 
 - script: |
+    git config user.email "ci@dev.azure.com" 
+    git config user.name "Azure DevOps"
     yarn run deploy:gh-pages -r https://$(GITHUB_PAT)@github.com/GedasFX/Kubasta.git
   displayName: 'Deploy Website'
