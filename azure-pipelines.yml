@@ -38,5 +38,7 @@ steps:
 - script: |
     git config user.email "ci@dev.azure.com" 
     git config user.name "Azure DevOps"
-    yarn run deploy:gh-pages -r https://$(GITHUB_PAT)@github.com/GedasFX/Kubasta.git
+    yarn run deploy:gh-pages -r https://$GITHUB_PAT@github.com/GedasFX/Kubasta.git
+  env:
+    GITHUB_PAT: $(GITHUB_PAT)
   displayName: 'Deploy Website'
