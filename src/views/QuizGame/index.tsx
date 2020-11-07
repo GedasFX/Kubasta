@@ -5,7 +5,8 @@ import ActionableImage from '../../components/ActionableImage';
 import { AppState } from '../../store';
 import { useSelector, useDispatch } from 'react-redux';
 import Buttons from './Buttons';
-import { gameActions, GameObject } from '../../store/game';
+import { gameActions } from '../../store/game';
+import gameItems, { GameObject } from '../../game-data-store';
 
 const useStyles = makeStyles((theme) => ({
   imgContainer: {
@@ -25,16 +26,14 @@ export default function QuizGame() {
   const [gameObj, setGameObj] = useState(undefined as GameObject | undefined);
 
   useEffect(() => {
-    dispatch(gameActions.setActiveItemId({ id: 1 }));
+    dispatch(gameActions.setActiveItemId({ id: 'First' }));
   }, [dispatch]);
 
   useEffect(() => {
     setGameObj(
-      gameState.activeItemId
-        ? gameState.items.entities[gameState.activeItemId]
-        : undefined
+      gameState.activeItemId ? gameItems[gameState.activeItemId] : undefined
     );
-  }, [gameState.activeItemId, gameState.items]);
+  }, [gameState.activeItemId]);
 
   if (!gameObj) {
     return null;

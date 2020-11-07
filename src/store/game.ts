@@ -1,18 +1,8 @@
-import {
-  createEntityAdapter,
-  createSlice,
-  EntityState,
-  PayloadAction,
-} from '@reduxjs/toolkit';
-import { AppDispatch } from '.';
-
-import entities from '../game-data-store';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 const slice = createSlice({
-  name: 'category',
-  initialState: {
-    items: adapter.addMany(adapter.getInitialState(), entities),
-  } as {
+  name: 'game',
+  initialState: {} as {
     activeItemId?: string | number;
   },
   reducers: {
