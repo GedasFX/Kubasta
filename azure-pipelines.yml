@@ -4,7 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
-- master
+  - master
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -13,34 +13,36 @@ variables:
   YARN_CACHE_FOLDER: $(Pipeline.Workspace)/.yarn
 
 steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '10.x'
-  displayName: 'Install Node.js'
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '10.x'
+    displayName: 'Install Node.js'
 
-# https://docs.microsoft.com/en-us/azure/devops/pipelines/release/caching?view=azure-devops#key-input
-- task: Cache@2
-  inputs:
-    key: 'yarn | "$(Agent.OS)" | yarn.lock'
-    restoreKeys: |
-       yarn | "$(Agent.OS)"
-       yarn
-    path: $(YARN_CACHE_FOLDER)
-  displayName: Cache Yarn packages
+  # https://docs.microsoft.com/en-us/azure/devops/pipelines/release/caching?view=azure-devops#key-input
+  - task: Cache@2
+    inputs:
+      key: 'yarn | "$(Agent.OS)" | yarn.lock'
+      restoreKeys: |
+        yarn | "$(Agent.OS)"
+        yarn
+      path: $(YARN_CACHE_FOLDER)
+    displayName: Cache Yarn packages
 
-- script: | 
-    yarn --frozen-lockfile
-  displayName: 'Install Dependecies'
+  - script: |
+      yarn --frozen-lockfile
+    displayName: 'Install Dependecies'
 
-- script: |
-    yarn run build
-  displayName: 'Build React App'
+  - script: |
+      yarn run build
+    env:
+      PUBLIC_URL: 'http://kubasta.github.io/Kubasta/'
+    displayName: 'Build React App'
 
-# https://florian-rappl.de/News/Page/383/azure-pipelines-publish-to-github-pages
-- script: |
-    git config user.email "ci@dev.azure.com" 
-    git config user.name "Azure DevOps"
-    yarn run deploy:gh-pages -r https://$GITHUB_PAT@github.com/GedasFX/Kubasta.git
-  env:
-    GITHUB_PAT: $(GITHUB_PAT)
-  displayName: 'Deploy Website'
+  # https://florian-rappl.de/News/Page/383/azure-pipelines-publish-to-github-pages
+  - script: |
+      git config user.email "ci@dev.azure.com" 
+      git config user.name "Azure DevOps"
+      yarn run deploy:gh-pages -r https://$GITHUB_PAT@github.com/GedasFX/Kubasta.git
+    env:
+      GITHUB_PAT: $(GITHUB_PAT)
+    displayName: 'Deploy Website'

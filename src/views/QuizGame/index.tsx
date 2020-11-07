@@ -1,55 +1,52 @@
 import { Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import React from 'react';
-
+import React, { useEffect, useState } from 'react';
+import ActionableImage from '../../components/ActionableImage';
+import { AppState } from '../../store';
+import { useSelector, useDispatch } from 'react-redux';
 import Buttons from './Buttons';
+import { gameActions, GameObject } from '../../store/game';
 
 const useStyles = makeStyles((theme) => ({
   imgContainer: {
     margin: theme.spacing(8, 0, 3),
-    position: 'relative',
-
-    '& > button': {
-      position: 'absolute',
-
-      background: 'transparent',
-      border: 'none',
-    },
   },
   btnContainer: {
     margin: theme.spacing(0),
   },
-  img: {
-    width: '100%',
-  },
 }));
 
-export default function QuizGame(props: {
-  imageUrl: string;
-  buttons: {
-    position: { top: number | string; left: number | string };
-    size: { width: number | string; height: number | string };
-  }[];
-}) {
+export default function QuizGame() {
   const classes = useStyles();
+
+  const dispatch = useDispatch();
+  const gameState = useSelector((state: AppState) => state.game);
+
+  const [gameObj, setGameObj] = useState(undefined as GameObject | undefined);
+
+  useEffect(() => {
+    dispatch(gameActions.setActiveItemId({ id: 1 }));
+  }, [dispatch]);
+
+  useEffect(() => {
+    setGameObj(
+      gameState.activeItemId
+        ? gameState.items.entities[gameState.activeItemId]
+        : undefined
+    );
+  }, [gameState.activeItemId, gameState.items]);
+
+  if (!gameObj) {
+    return null;
+  }
 
   return (
     <Grid container>
       <Grid item className={classes.imgContainer}>
-        <img src={props.imageUrl} alt="Desktop" className={classes.img} />
-        {props.buttons.map((b, i) => {
-          return (
-            <button
-              key={i}
-              style={{
-                top: b.position.top,
-                left: b.position.left,
-                width: b.size.width,
-                height: b.size.height,
-              }}
-            ></button>
-          );
-        })}
+        <ActionableImage
+          imageUrl={gameObj.imageUrl}
+          buttons={gameObj.buttons}
+        />
       </Grid>
       <Grid item className={classes.btnContainer}>
         <Buttons />
