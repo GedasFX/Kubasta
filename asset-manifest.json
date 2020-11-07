@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Kubasta/static/css/main.3372a6f8.chunk.css",
+    "main.css": "/Kubasta/static/css/main.c33b7e12.chunk.css",
     "main.js": "/Kubasta/static/js/main.05723108.chunk.js",
     "main.js.map": "/Kubasta/static/js/main.05723108.chunk.js.map",
     "runtime-main.js": "/Kubasta/static/js/runtime-main.78bc8544.js",
@@ -10,14 +10,14 @@
     "static/js/3.5d6dc6e2.chunk.js": "/Kubasta/static/js/3.5d6dc6e2.chunk.js",
     "static/js/3.5d6dc6e2.chunk.js.map": "/Kubasta/static/js/3.5d6dc6e2.chunk.js.map",
     "index.html": "/Kubasta/index.html",
-    "static/css/main.3372a6f8.chunk.css.map": "/Kubasta/static/css/main.3372a6f8.chunk.css.map",
+    "static/css/main.c33b7e12.chunk.css.map": "/Kubasta/static/css/main.c33b7e12.chunk.css.map",
     "static/js/2.3e5cc7ad.chunk.js.LICENSE.txt": "/Kubasta/static/js/2.3e5cc7ad.chunk.js.LICENSE.txt",
     "static/media/ee72e41123a09d160822985d61668c18.f65544bc.jpg": "/Kubasta/static/media/ee72e41123a09d160822985d61668c18.f65544bc.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.78bc8544.js",
     "static/js/2.3e5cc7ad.chunk.js",
-    "static/css/main.3372a6f8.chunk.css",
+    "static/css/main.c33b7e12.chunk.css",
     "static/js/main.05723108.chunk.js"
   ]
 }
