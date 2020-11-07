@@ -35,7 +35,7 @@ steps:
   - script: |
       yarn run build
     env:
-      PUBLIC_URL: 'http://kubasta.github.io/Kubasta/'
+      PUBLIC_URL: '/Kubasta/'
     displayName: 'Build React App'
 
   # https://florian-rappl.de/News/Page/383/azure-pipelines-publish-to-github-pages
