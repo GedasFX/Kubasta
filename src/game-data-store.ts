@@ -6,6 +6,7 @@ import image_2 from './media/bg/648uTUS.jpg';
 
 export interface GameObject {
   imageUrl: string;
+  description: string;
   buttons: {
     position: { top: number | string; left: number | string };
     size: { width: number | string; height: number | string };
@@ -16,6 +17,7 @@ export interface GameObject {
 const data: { [key: string]: GameObject } = {
   First: {
     imageUrl: image_1,
+    description: 'task description 1',
     buttons: [
       {
         position: { top: '10%', left: '10%' },
@@ -33,6 +35,7 @@ const data: { [key: string]: GameObject } = {
   },
   Second: {
     imageUrl: image_2,
+    description: 'task description 2',
     buttons: [
       {
         position: { top: '10%', left: '10%' },

@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react';
 import ActionableImage from '../../components/ActionableImage';
 import { AppState } from '../../store';
 import { useSelector, useDispatch } from 'react-redux';
-import Buttons from './Buttons';
 import { gameActions } from '../../store/game';
 import gameItems, { GameObject } from '../../game-data-store';
 
@@ -17,39 +16,28 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function QuizGame() {
-  const classes = useStyles();
+export default function ToolbarContent() {
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const gameState = useSelector((state: AppState) => state.game);
 
-  const [gameObj, setGameObj] = useState(undefined as GameObject | undefined);
+  const [taskDescription, setTaskDescription] = useState('');
+
+  // useEffect(() => {
+  //   dispatch(gameActions.setActiveItemId({ id: 'First' }));
+  // }, [dispatch]);
 
   useEffect(() => {
-    dispatch(gameActions.setActiveItemId({ id: 'First' }));
-  }, [dispatch]);
-
-  useEffect(() => {
-    setGameObj(
-      gameState.activeItemId ? gameItems[gameState.activeItemId] : undefined
+    setTaskDescription(
+      gameState.activeItemId ? gameItems[gameState.activeItemId].description : ''
     );
   }, [gameState.activeItemId]);
 
-  if (!gameObj) {
+  if (!taskDescription) {
     return null;
   }
 
   return (
-    <Grid container>
-      <Grid item className={classes.imgContainer}>
-        <ActionableImage
-          imageUrl={gameObj.imageUrl}
-          buttons={gameObj.buttons}
-        />
-      </Grid>
-      {/*<Grid item className={classes.btnContainer}>*/}
-      {/*  <Buttons />*/}
-      {/*</Grid>*/}
-    </Grid>
+    <div>{taskDescription}</div>
   );
 }
