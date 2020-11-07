@@ -18,6 +18,7 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
+# https://docs.microsoft.com/en-us/azure/devops/pipelines/release/caching?view=azure-devops#key-input
 - task: Cache@2
   inputs:
     key: 'yarn | "$(Agent.OS)" | yarn.lock'
@@ -35,6 +36,7 @@ steps:
     yarn run build
   displayName: 'Build React App'
 
+# https://florian-rappl.de/News/Page/383/azure-pipelines-publish-to-github-pages
 - script: |
     git config user.email "ci@dev.azure.com" 
     git config user.name "Azure DevOps"
