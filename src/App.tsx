@@ -1,13 +1,10 @@
 import {
   AppBar,
-  Button,
   Container,
   CssBaseline,
-  IconButton,
   ThemeProvider,
   Toolbar,
 } from '@material-ui/core';
-import { Menu } from '@material-ui/icons';
 import React from 'react';
 import './styles/styles.css';
 import theme from './theme';

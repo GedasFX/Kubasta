@@ -27,9 +27,15 @@ export default function ToolbarContent() {
   //   dispatch(gameActions.setActiveItemId({ id: 'First' }));
   // }, [dispatch]);
 
+  const computeTaskDescription = (activeItemId: string | number, gameItems:{[key: string]: GameObject}) => {
+    const progressIndicator = activeItemId.toString() + ' task of ' + Object.keys(gameItems).length;
+    const description = gameItems[activeItemId].description;
+    return progressIndicator + ': ' + description;
+  };
+
   useEffect(() => {
     setTaskDescription(
-      gameState.activeItemId ? gameItems[gameState.activeItemId].description : ''
+      gameState.activeItemId ? computeTaskDescription(gameState.activeItemId, gameItems) : ''
     );
   }, [gameState.activeItemId]);
 

@@ -17,7 +17,7 @@ export interface GameObject {
 const data: { [key: string]: GameObject } = {
   First: {
     imageUrl: image_1,
-    description: 'task description 1',
+    description: 'Task description 1',
     buttons: [
       {
         position: { top: '10%', left: '10%' },
@@ -35,7 +35,7 @@ const data: { [key: string]: GameObject } = {
   },
   Second: {
     imageUrl: image_2,
-    description: 'task description 2',
+    description: 'Task description 2',
     buttons: [
       {
         position: { top: '10%', left: '10%' },
