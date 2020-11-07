@@ -18,7 +18,8 @@ steps:
 - script: |
     yarn
     yarn run build
-  displayName: 'npm install and build'
+  displayName: 'Build'
 
 - script: |
-    yarn run deploy -- -r https://$(GITHUB_PAT)@github.com/Kubasta.git
+    yarn run deploy:gh-pages -- -r https://$(GITHUB_PAT)@github.com/Kubasta.git
+  displayName: 'Deploy'
