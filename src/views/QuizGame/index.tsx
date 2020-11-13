@@ -6,7 +6,7 @@ import { AppState } from '../../store';
 import { useSelector, useDispatch } from 'react-redux';
 import Buttons from './Buttons';
 import { gameActions } from '../../store/game';
-import gameItems, { GameObject } from '../../game-data-store';
+import gameItems, { GameObject } from '../../game-data';
 
 const useStyles = makeStyles((theme) => ({
   imgContainer: {
@@ -26,14 +26,17 @@ export default function QuizGame() {
   const [gameObj, setGameObj] = useState(undefined as GameObject | undefined);
 
   useEffect(() => {
-    dispatch(gameActions.setActiveItemId({ id: 'First' }));
+    dispatch(gameActions.setActiveTaskId({ id: 1 }));
+    dispatch(gameActions.setActiveScreenId({ id: 'desktopnetworknotconnected' }));
   }, [dispatch]);
 
   useEffect(() => {
     setGameObj(
-      gameState.activeItemId ? gameItems[gameState.activeItemId] : undefined
+      gameState.activeTaskId && gameState.activeScreenId
+        ? gameItems[gameState.activeTaskId][gameState.activeScreenId]
+        : undefined
     );
-  }, [gameState.activeItemId]);
+  }, [gameState.activeTaskId, gameState.activeScreenId]);
 
   if (!gameObj) {
     return null;
@@ -43,13 +46,10 @@ export default function QuizGame() {
     <Grid container>
       <Grid item className={classes.imgContainer}>
         <ActionableImage
-          imageUrl={gameObj.imageUrl}
+          component={gameObj.component}
           buttons={gameObj.buttons}
         />
       </Grid>
-      {/*<Grid item className={classes.btnContainer}>*/}
-      {/*  <Buttons />*/}
-      {/*</Grid>*/}
     </Grid>
   );
 }

@@ -3,14 +3,21 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 const slice = createSlice({
   name: 'game',
   initialState: {} as {
-    activeItemId?: string | number;
+    activeTaskId?: string | number;
+    activeScreenId?: string | number;
   },
   reducers: {
-    setActiveItemId: (
+    setActiveTaskId: (
       state,
       { payload }: PayloadAction<{ id?: string | number }>
     ) => {
-      state.activeItemId = payload.id;
+      state.activeTaskId = payload.id;
+    },
+    setActiveScreenId: (
+      state,
+      { payload }: PayloadAction<{ id?: string | number }>
+    ) => {
+      state.activeScreenId = payload.id;
     },
   },
 });

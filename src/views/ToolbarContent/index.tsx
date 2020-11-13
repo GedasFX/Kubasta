@@ -5,7 +5,7 @@ import ActionableImage from '../../components/ActionableImage';
 import { AppState } from '../../store';
 import { useSelector, useDispatch } from 'react-redux';
 import { gameActions } from '../../store/game';
-import gameItems, { GameObject } from '../../game-data-store';
+import gameItems, { GameObject, TaskData } from 'game-data';
 
 const useStyles = makeStyles((theme) => ({
   imgContainer: {
@@ -17,7 +17,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function ToolbarContent() {
-
   // const dispatch = useDispatch();
   const gameState = useSelector((state: AppState) => state.game);
 
@@ -27,23 +26,30 @@ export default function ToolbarContent() {
   //   dispatch(gameActions.setActiveItemId({ id: 'First' }));
   // }, [dispatch]);
 
-  const computeTaskDescription = (activeItemId: string | number, gameItems:{[key: string]: GameObject}) => {
-    const progressIndicator = activeItemId.toString() + ' task of ' + Object.keys(gameItems).length;
-    const description = gameItems[activeItemId].description;
+  const computeTaskDescription = (
+    activeItemId: string | number,
+    gameItems: TaskData
+  ) => {
+    const progressIndicator =
+      activeItemId.toString() + ' task of ' + Object.keys(gameItems).length;
+    const description = gameItems[activeItemId]?.description;
     return progressIndicator + ': ' + description;
   };
 
   useEffect(() => {
     setTaskDescription(
-      gameState.activeItemId ? computeTaskDescription(gameState.activeItemId, gameItems) : ''
+      gameState.activeTaskId && gameState.activeScreenId
+        ? computeTaskDescription(
+            gameState.activeScreenId,
+            gameItems[gameState.activeTaskId]
+          )
+        : ''
     );
-  }, [gameState.activeItemId]);
+  }, [gameState.activeTaskId, gameState.activeScreenId]);
 
   if (!taskDescription) {
     return null;
   }
 
-  return (
-    <div>{taskDescription}</div>
-  );
+  return <div>{taskDescription}</div>;
 }

@@ -9,7 +9,7 @@ import React from 'react';
 import './styles/styles.css';
 import theme from './theme';
 import QuizGame from './views/QuizGame';
-import ToolbarContent from "./views/ToolbarContent";
+import ToolbarContent from './views/ToolbarContent';
 
 function App() {
   return (
@@ -17,10 +17,10 @@ function App() {
       <CssBaseline />
       <AppBar position="static">
         <Toolbar>
-            <ToolbarContent/>
+          <ToolbarContent />
         </Toolbar>
       </AppBar>
-      <Container maxWidth="lg">
+      <Container maxWidth="md">
         <QuizGame />
       </Container>
     </ThemeProvider>
