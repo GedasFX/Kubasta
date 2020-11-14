@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Kubasta/static/css/main.c33b7e12.chunk.css",
-    "main.js": "/Kubasta/static/js/main.b68a2829.chunk.js",
-    "main.js.map": "/Kubasta/static/js/main.b68a2829.chunk.js.map",
+    "main.js": "/Kubasta/static/js/main.33f24c7c.chunk.js",
+    "main.js.map": "/Kubasta/static/js/main.33f24c7c.chunk.js.map",
     "runtime-main.js": "/Kubasta/static/js/runtime-main.7d51bd2e.js",
     "runtime-main.js.map": "/Kubasta/static/js/runtime-main.7d51bd2e.js.map",
     "static/js/2.9026d403.chunk.js": "/Kubasta/static/js/2.9026d403.chunk.js",
@@ -12,13 +12,14 @@
     "index.html": "/Kubasta/index.html",
     "static/css/main.c33b7e12.chunk.css.map": "/Kubasta/static/css/main.c33b7e12.chunk.css.map",
     "static/js/2.9026d403.chunk.js.LICENSE.txt": "/Kubasta/static/js/2.9026d403.chunk.js.LICENSE.txt",
-    "static/media/648uTUS.9c45d627.jpg": "/Kubasta/static/media/648uTUS.9c45d627.jpg",
-    "static/media/ee72e41123a09d160822985d61668c18.f65544bc.jpg": "/Kubasta/static/media/ee72e41123a09d160822985d61668c18.f65544bc.jpg"
+    "static/media/availablenetworks.1e5b6f9a.png": "/Kubasta/static/media/availablenetworks.1e5b6f9a.png",
+    "static/media/chooseasprivatenetwork.d79c0bc3.png": "/Kubasta/static/media/chooseasprivatenetwork.d79c0bc3.png",
+    "static/media/desktopnetworknotconnected.1d992857.png": "/Kubasta/static/media/desktopnetworknotconnected.1d992857.png"
   },
   "entrypoints": [
     "static/js/runtime-main.7d51bd2e.js",
     "static/js/2.9026d403.chunk.js",
     "static/css/main.c33b7e12.chunk.css",
-    "static/js/main.b68a2829.chunk.js"
+    "static/js/main.33f24c7c.chunk.js"
   ]
 }
