@@ -23,3 +23,14 @@ yarn-debug.log*
 yarn-error.log*
 
 debug.log
+/.vs/VSWorkspaceState.json
+/.vs/slnx.sqlite
+/.vs/ProjectSettings.json
+/.vs/kubasta/v16/.suo
+/.vs/kubasta/config/applicationhost.config
+/.idea/vcs.xml
+/.idea/modules.xml
+/.idea/misc.xml
+/.idea/kubasta.iml
+/.idea/.gitignore
+/.idea/inspectionProfiles/Project_Default.xml

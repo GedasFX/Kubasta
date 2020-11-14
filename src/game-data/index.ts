@@ -2,12 +2,12 @@ import { AppDispatch } from '../store';
 import task1data from './task1';
 
 export interface TaskData {
-  [key: string]: GameObject;
+  screens: {[key: string]: ScreenData};
+  description: string;
 }
 
-export interface GameObject {
+export interface ScreenData {
   component: React.ReactNode;
-  description: string;
   buttons: {
     position: { top: number | string; left: number | string };
     size: { width: number | string; height: number | string };
@@ -15,7 +15,7 @@ export interface GameObject {
   }[];
 }
 
-const gameData: { [taskId: string]: TaskData } = {
+const gameTasks: { [taskId: string]: TaskData } = {
   1: task1data,
 };
-export default gameData;
+export default gameTasks;

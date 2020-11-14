@@ -5,7 +5,7 @@ import ActionableImage from '../../components/ActionableImage';
 import { AppState } from '../../store';
 import { useSelector, useDispatch } from 'react-redux';
 import { gameActions } from '../../store/game';
-import gameItems, { GameObject, TaskData } from 'game-data';
+import gameItems, { ScreenData, TaskData } from 'game-data';
 
 const useStyles = makeStyles((theme) => ({
   imgContainer: {
@@ -27,12 +27,12 @@ export default function ToolbarContent() {
   // }, [dispatch]);
 
   const computeTaskDescription = (
-    activeItemId: string | number,
-    gameItems: TaskData
+    activateTaskId: string | number,
+    taskData: TaskData
   ) => {
     const progressIndicator =
-      activeItemId.toString() + ' task of ' + Object.keys(gameItems).length;
-    const description = gameItems[activeItemId]?.description;
+        'task ' + activateTaskId.toString() + ' of ' + Object.keys(gameItems).length;
+    const description = taskData?.description;
     return progressIndicator + ': ' + description;
   };
 
@@ -40,7 +40,7 @@ export default function ToolbarContent() {
     setTaskDescription(
       gameState.activeTaskId && gameState.activeScreenId
         ? computeTaskDescription(
-            gameState.activeScreenId,
+          gameState.activeTaskId,
             gameItems[gameState.activeTaskId]
           )
         : ''

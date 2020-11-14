@@ -20,7 +20,7 @@ function App() {
           <ToolbarContent />
         </Toolbar>
       </AppBar>
-      <Container maxWidth="md">
+      <Container maxWidth="lg">
         <QuizGame />
       </Container>
     </ThemeProvider>

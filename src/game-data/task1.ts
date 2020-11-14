@@ -14,62 +14,72 @@ import pressonsecurenetwork from 'assets/tasks/1/pressonsecurenetwork.png';
 import typeinpassword from 'assets/tasks/1/typeinpassword.png';
 
 const task1data: TaskData = {
-  desktopnetworknotconnected: {
-    component: fromUrl(desktopnetworknotconnected),
-    description: '',
-    buttons: [
-      {
-        position: { left: '92%', top: '94.5%' },
-        size: { width: '2%', height: '4%' },
-        onClick: (dispatch) => {
-          dispatch(gameActions.setActiveScreenId({ id: 'availablenetworks' }));
+  description:'Description of task 1',
+  screens: {
+    desktopnetworknotconnected: {
+      component: fromUrl(desktopnetworknotconnected),
+      buttons: [
+        {
+          position: {left: '92%', top: '94.5%'},
+          size: {width: '2%', height: '4%'},
+          onClick: (dispatch) => {
+            dispatch(gameActions.setActiveScreenId({id: 'availablenetworks'}));
+          },
         },
-      },
-    ],
-  },
-  availablenetworks: {
-    component: fromUrl(availablenetworks),
-    description: 'Task description 1',
-    buttons: [
-      {
-        position: { top: '10%', left: '10%' },
-        size: { width: '20%', height: '20%' },
-        onClick: (dispatch) => {
-          dispatch(gameActions.setActiveScreenId({ id: 'Second' }));
+      ],
+    },
+    availablenetworks: {
+      component: fromUrl(availablenetworks),
+      buttons: [
+        {
+          position: {left: '92%', top: '94.5%'},
+          size: {width: '2%', height: '4%'},
+          onClick: (dispatch) => {
+            dispatch(gameActions.setActiveScreenId({id: 'desktopnetworknotconnected'}));
+          },
         },
-      },
-      {
-        position: { top: '40%', left: '10%' },
-        size: { width: '20%', height: '20%' },
-        onClick: () => window.alert('Congratulations'),
-      },
-      {
-        position: { left: '92%', top: '94.5%' },
-        size: { width: '2%', height: '4%' },
-        onClick: (dispatch) => {
-          dispatch(gameActions.setActiveScreenId({ id: 'desktopnetworknotconnected' }));
+        {
+          position: {left: '77%', top: '28%'},
+          size: {width: '22%', height: '8%'},
+          onClick: (dispatch) => {
+            dispatch(gameActions.setActiveScreenId({id: 'pressonopennetwork'}));
+          },
         },
-      },
-    ],
-  },
-  Second: {
-    component: fromUrl(chooseasprivatenetwork),
-    description: 'Task description 2',
-    buttons: [
-      {
-        position: { top: '10%', left: '10%' },
-        size: { width: '20%', height: '20%' },
-        onClick: (dispatch) => {
-          dispatch(gameActions.setActiveScreenId({ id: 'First' }));
+        {
+          position: {left: '77%', top: '36%'},
+          size: {width: '22%', height: '8%'},
+          onClick: (dispatch) => {
+            dispatch(gameActions.setActiveScreenId({id: 'pressonsecurenetwork'}));
+          },
+        }
+      ],
+    },
+    pressonsecurenetwork: {
+      component: fromUrl(pressonsecurenetwork),
+      buttons: [
+        {
+          position: {left: '92%', top: '94.5%'},
+          size: {width: '2%', height: '4%'},
+          onClick: (dispatch) => {
+            dispatch(gameActions.setActiveScreenId({id: 'desktopnetworknotconnected'}));
+          },
         },
-      },
-      {
-        position: { top: '40%', left: '10%' },
-        size: { width: '20%', height: '20%' },
-        onClick: () => window.alert('Not congratulations'),
-      },
-    ],
-  },
+      ]
+    },
+    pressonopennetwork: {
+      component: fromUrl(pressonopennetwork),
+      buttons: [
+        {
+          position: {top: '10%', left: '10%'},
+          size: {width: '20%', height: '20%'},
+          onClick: (dispatch) => {
+            dispatch(gameActions.setActiveScreenId({id: 'Second'}));
+          },
+        },
+
+      ]
+    }
+  }
 };
 
 export default task1data;
