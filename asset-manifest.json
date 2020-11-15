@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Kubasta/static/css/main.3372a6f8.chunk.css",
-    "main.js": "/Kubasta/static/js/main.313d634c.chunk.js",
-    "main.js.map": "/Kubasta/static/js/main.313d634c.chunk.js.map",
+    "main.js": "/Kubasta/static/js/main.97eddcf6.chunk.js",
+    "main.js.map": "/Kubasta/static/js/main.97eddcf6.chunk.js.map",
     "runtime-main.js": "/Kubasta/static/js/runtime-main.7d51bd2e.js",
     "runtime-main.js.map": "/Kubasta/static/js/runtime-main.7d51bd2e.js.map",
     "static/js/2.9026d403.chunk.js": "/Kubasta/static/js/2.9026d403.chunk.js",
@@ -16,6 +16,7 @@
     "static/media/connectedopennetwork.3add7549.png": "/Kubasta/static/media/connectedopennetwork.3add7549.png",
     "static/media/connectedsecurenetwork.16346748.png": "/Kubasta/static/media/connectedsecurenetwork.16346748.png",
     "static/media/desktopnetworknotconnected.1d992857.png": "/Kubasta/static/media/desktopnetworknotconnected.1d992857.png",
+    "static/media/discoverableonnetwork.f641c86c.png": "/Kubasta/static/media/discoverableonnetwork.f641c86c.png",
     "static/media/pressonopennetwork.218e43b6.png": "/Kubasta/static/media/pressonopennetwork.218e43b6.png",
     "static/media/pressonsecurenetwork.166db23d.png": "/Kubasta/static/media/pressonsecurenetwork.166db23d.png",
     "static/media/typeinpassword.c41db31f.png": "/Kubasta/static/media/typeinpassword.c41db31f.png"
@@ -24,6 +25,6 @@
     "static/js/runtime-main.7d51bd2e.js",
     "static/js/2.9026d403.chunk.js",
     "static/css/main.3372a6f8.chunk.css",
-    "static/js/main.313d634c.chunk.js"
+    "static/js/main.97eddcf6.chunk.js"
   ]
 }
