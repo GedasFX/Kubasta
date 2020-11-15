@@ -3,11 +3,9 @@ import { fromUrl } from '../components/AppImage';
 import { gameActions } from 'store/game';
 
 import availablenetworks from 'assets/tasks/1/availablenetworks.png';
-import chooseasprivatenetwork from 'assets/tasks/1/chooseasprivatenetwork.png';
-import chooseaspublicnetwork from 'assets/tasks/1/chooseaspublicnetwork.png';
 import connectedopennetwork from 'assets/tasks/1/connectedopennetwork.png';
 import connectedsecurenetwork from 'assets/tasks/1/connectedsecurenetwork.png';
-import desktopnetworkconnected from 'assets/tasks/1/desktopnetworkconnected.png';
+import discoverableonnetwork from 'assets/tasks/1/discoverableonnetwork.png';
 import desktopnetworknotconnected from 'assets/tasks/1/desktopnetworknotconnected.png';
 import pressonopennetwork from 'assets/tasks/1/pressonopennetwork.png';
 import pressonsecurenetwork from 'assets/tasks/1/pressonsecurenetwork.png';
@@ -136,18 +134,44 @@ const task1data: TaskData = {
           position: {top: '52.1%', left: '79.7%'},
           size: {width: '9.7%', height: '3.8%'},
           onClick: (dispatch)=> {
-            dispatch(gameActions.setActiveScreenId({id: 'connectedsecurenetwork'}));
+            dispatch(gameActions.setActiveScreenId({id: 'discoverableonnetwork'}));
           }
         },
       ],
     },
     connectedopennetwork: {
       component:fromUrl(connectedopennetwork),
-      buttons:[],
+      buttons:[
+        //secure network button
+        {
+          position: {left: '76.6%', top: '46.17%'},
+          size: {width: '24%', height: '8%'},
+          onClick: (dispatch) => {
+            dispatch(gameActions.setActiveScreenId({id: 'pressonsecurenetwork'}));
+          },
+        },
+      ],
     },
     connectedsecurenetwork: {
       component:fromUrl(connectedsecurenetwork),
       buttons:[],
+    },
+    discoverableonnetwork: {
+      component:fromUrl(discoverableonnetwork),
+      buttons:[
+        {
+          position: {top: '59%', left: '79.7%'},
+          size: {width: '9.7%', height: '3.8%'},
+          onClick:(dispatch) => {
+            dispatch(gameActions.setActiveScreenId({id: 'connectedsecurenetwork'}))
+          }
+        },
+        {
+          position: {top: '59%', left: '89.5%'},
+          size: {width: '9.7%', height: '3.8%'},
+          onClick:() => {window.alert('fail')}
+        }
+      ]
     }
   }
 };
