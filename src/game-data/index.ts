@@ -1,5 +1,6 @@
 import { AppDispatch } from '../store';
 import task1data from './task1';
+import task2data from './task2';
 
 export interface TaskData {
   screens: {[key: string]: ScreenData};
@@ -17,5 +18,6 @@ export interface ScreenData {
 
 const gameTasks: { [taskId: string]: TaskData } = {
   1: task1data,
+  2: task2data
 };
 export default gameTasks;

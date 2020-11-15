@@ -12,7 +12,7 @@ import pressonsecurenetwork from 'assets/tasks/1/pressonsecurenetwork.png';
 import typeinpassword from 'assets/tasks/1/typeinpassword.png';
 
 const task1data: TaskData = {
-  description:'Description of task 1',
+  description:'Connect safely to the internet',
   screens: {
     desktopnetworknotconnected: {
       component: fromUrl(desktopnetworknotconnected),
@@ -163,7 +163,8 @@ const task1data: TaskData = {
           position: {top: '59%', left: '79.7%'},
           size: {width: '9.7%', height: '3.8%'},
           onClick:(dispatch) => {
-            dispatch(gameActions.setActiveScreenId({id: 'connectedsecurenetwork'}))
+            dispatch(gameActions.setActiveScreenId({id: 'connectedsecurenetwork'}));
+            dispatch(gameActions.toggleFeedbackDialog());
           }
         },
         {

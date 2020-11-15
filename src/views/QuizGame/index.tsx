@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import Buttons from './Buttons';
 import { gameActions } from '../../store/game';
 import gameItems, { ScreenData } from '../../game-data';
+import FeedbackDialog from "../../components/FeedbackDialog";
 
 const useStyles = makeStyles((theme) => ({
   imgContainer: {
@@ -23,7 +24,7 @@ export default function QuizGame() {
   const dispatch = useDispatch();
   const gameState = useSelector((state: AppState) => state.game);
 
-  const [gameObj, setGameObj] = useState(undefined as ScreenData | undefined);
+  const [screenData, setScreenData] = useState(undefined as ScreenData | undefined);
 
   useEffect(() => {
     dispatch(gameActions.setActiveTaskId({ id: 1 }));
@@ -31,14 +32,14 @@ export default function QuizGame() {
   }, [dispatch]);
 
   useEffect(() => {
-    setGameObj(
+    setScreenData(
       gameState.activeTaskId && gameState.activeScreenId
         ? gameItems[gameState.activeTaskId].screens[gameState.activeScreenId]
         : undefined
     );
   }, [gameState.activeTaskId, gameState.activeScreenId]);
 
-  if (!gameObj) {
+  if (!screenData) {
     return null;
   }
 
@@ -46,9 +47,10 @@ export default function QuizGame() {
     <Grid container>
       <Grid item className={classes.imgContainer}>
         <ActionableImage
-          component={gameObj.component}
-          buttons={gameObj.buttons}
+          component={screenData.component}
+          buttons={screenData.buttons}
         />
+        <FeedbackDialog></FeedbackDialog>
       </Grid>
     </Grid>
   );

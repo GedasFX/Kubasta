@@ -31,7 +31,8 @@ export default function ToolbarContent() {
     taskData: TaskData
   ) => {
     const progressIndicator =
-        'task ' + activateTaskId.toString() + ' of ' + Object.keys(gameItems).length;
+        'task ' +
+        activateTaskId.toString() + ' of ' + Object.keys(gameItems).length;
     const description = taskData?.description;
     return progressIndicator + ': ' + description;
   };
