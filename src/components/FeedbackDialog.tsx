@@ -1,16 +1,11 @@
-import { makeStyles } from '@material-ui/core/styles';
 import React, {useState} from 'react';
-import { withStyles } from '@material-ui/core/styles';
 import Dialog from '@material-ui/core/Dialog';
 import MuiDialogTitle from '@material-ui/core/DialogTitle';
-import MuiDialogContent from '@material-ui/core/DialogContent';
 import DialogActions from '@material-ui/core/DialogActions';
-import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import {AppDispatch, AppState} from '../store';
 import {useDispatch, useSelector} from 'react-redux';
-import {ScreenData} from "../game-data";
 import {gameActions} from "../store/game";
 
 const DialogTitle = (props: {
@@ -27,7 +22,6 @@ const DialogTitle = (props: {
 export default function FeedbackDialog() {
   const dispatch = useDispatch();
   const gameState = useSelector((state: AppState) => state.game);
-  const [screenData, setScreenData] = useState(undefined as ScreenData | undefined);
   const onConfirmation = function() {
       dispatch(gameActions.toggleFeedbackDialog())
       dispatch(gameActions.setActiveTaskId({id: 2}));

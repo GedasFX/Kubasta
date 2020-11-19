@@ -3,6 +3,7 @@ import task1data from './task1';
 import task2data from './task2';
 
 export interface TaskData {
+  title:string;
   screens: {[key: string]: ScreenData};
   description: string;
 }

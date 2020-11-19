@@ -8,6 +8,7 @@ import Buttons from './Buttons';
 import { gameActions } from '../../store/game';
 import gameItems, { ScreenData } from '../../game-data';
 import FeedbackDialog from "../../components/FeedbackDialog";
+import VerticalStepper from "../../components/Stepper";
 
 const useStyles = makeStyles((theme) => ({
   imgContainer: {
@@ -44,8 +45,11 @@ export default function QuizGame() {
   }
 
   return (
-    <Grid container>
-      <Grid item className={classes.imgContainer}>
+    <Grid container spacing={1}>
+      <Grid item xs={2}>
+        <VerticalStepper></VerticalStepper>
+      </Grid>
+      <Grid item xs={10} className={classes.imgContainer}>
         <ActionableImage
           component={screenData.component}
           buttons={screenData.buttons}

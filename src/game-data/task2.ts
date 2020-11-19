@@ -3,6 +3,7 @@ import {fromUrl} from "../components/AppImage";
 import antiviruspopup from "../assets/tasks/2/antiviruspopup.png";
 
 const task2data: TaskData = {
+    title:'Antivirus',
     description:'Deal appropriately with default antivirus',
     screens: {
         antiviruspopup: {

@@ -22,10 +22,6 @@ export default function ToolbarContent() {
 
   const [taskDescription, setTaskDescription] = useState('');
 
-  // useEffect(() => {
-  //   dispatch(gameActions.setActiveItemId({ id: 'First' }));
-  // }, [dispatch]);
-
   const computeTaskDescription = (
     activateTaskId: string | number,
     taskData: TaskData

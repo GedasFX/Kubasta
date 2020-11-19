@@ -12,6 +12,7 @@ import pressonsecurenetwork from 'assets/tasks/1/pressonsecurenetwork.png';
 import typeinpassword from 'assets/tasks/1/typeinpassword.png';
 
 const task1data: TaskData = {
+  title:'Internet Connection',
   description:'Connect safely to the internet',
   screens: {
     desktopnetworknotconnected: {
