@@ -31,7 +31,7 @@ export default function FeedbackDialog() {
   return (
     <div>
       <Dialog open={gameState.showFeedbackDialog ? gameState.showFeedbackDialog : false}>
-        <DialogTitle text={'Task Feedback'}></DialogTitle>
+        <DialogTitle text={gameState.feedbackText}></DialogTitle>
           <DialogActions>
               <Button autoFocus onClick={onConfirmation} color="primary">
                  Go to next task

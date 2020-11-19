@@ -1,0 +1,33 @@
+import React, {useEffect} from 'react';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
+import LinearProgress from '@material-ui/core/LinearProgress';
+import {useSelector} from "react-redux";
+import {AppState} from "../store";
+
+const BorderLinearProgress = withStyles((theme) => ({
+  root: {
+    height: 10,
+    borderRadius: 5,
+  },
+  colorPrimary: {
+    backgroundColor: theme.palette.grey[theme.palette.type === 'light' ? 200 : 700],
+  },
+  bar: {
+    borderRadius: 5,
+    backgroundColor: '#1a90ff',
+  },
+}))(LinearProgress);
+
+export default function CustomizedProgressBar() {
+  const [progress, setProgress] = React.useState(50);
+  const gameState = useSelector((state: AppState) => state.game);
+  useEffect(() => {
+    const progress = (gameState.points / 300) * 100;
+    setProgress(progress);
+  }, [gameState.points]);
+  return (
+      <div >
+        <BorderLinearProgress variant="determinate" value={progress} />
+      </div>
+  );
+}

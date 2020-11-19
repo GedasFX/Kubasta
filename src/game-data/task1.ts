@@ -1,6 +1,7 @@
 import { TaskData } from '.';
 import { fromUrl } from '../components/AppImage';
 import { gameActions } from 'store/game';
+import {POINTS_WRONG_ANSWER} from './';
 
 import availablenetworks from 'assets/tasks/1/availablenetworks.png';
 import connectedopennetwork from 'assets/tasks/1/connectedopennetwork.png';
@@ -106,7 +107,13 @@ const task1data: TaskData = {
           position: {left: '89.5%', top: '45.45%'},
           size: {width: '9.5%', height: '3.5%'},
           onClick: (dispatch) => {
+            const feedbackText = "Oh no! Open networks should be avoided whenever possible. Accessing sensitive information on such networks can result in that data getting compromised, e.g. login data to your banking. If given the choice, it is usually better to connect to a secured network.";
+
+            dispatch(gameActions.updatePoints({points:POINTS_WRONG_ANSWER}));
             dispatch(gameActions.setActiveScreenId({id:'connectedopennetwork'}));
+            dispatch(gameActions.setFeedbackDialogText({text:feedbackText}));
+            dispatch(gameActions.toggleFeedbackDialog());
+            console.log('pressed on open button')
           }
         },
       ]

@@ -9,6 +9,7 @@ import { gameActions } from '../../store/game';
 import gameItems, { ScreenData } from '../../game-data';
 import FeedbackDialog from "../../components/FeedbackDialog";
 import VerticalStepper from "../../components/Stepper";
+import CustomizedProgressBar from "../../components/ProgressBar";
 
 const useStyles = makeStyles((theme) => ({
   imgContainer: {
@@ -30,6 +31,7 @@ export default function QuizGame() {
   useEffect(() => {
     dispatch(gameActions.setActiveTaskId({ id: 1 }));
     dispatch(gameActions.setActiveScreenId({ id: 'desktopnetworknotconnected' }));
+    dispatch(gameActions.initializePoints());
   }, [dispatch]);
 
   useEffect(() => {
@@ -46,6 +48,9 @@ export default function QuizGame() {
 
   return (
     <Grid container spacing={1}>
+      <Grid item xs={12}>
+        <CustomizedProgressBar></CustomizedProgressBar>
+      </Grid>
       <Grid item xs={2}>
         <VerticalStepper></VerticalStepper>
       </Grid>

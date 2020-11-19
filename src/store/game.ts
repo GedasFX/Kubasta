@@ -6,6 +6,8 @@ const slice = createSlice({
     activeTaskId?: string | number;
     activeScreenId?: string | number;
     showFeedbackDialog?: boolean;
+    points:number;
+    feedbackText:string;
   },
   reducers: {
     setActiveTaskId: (
@@ -25,6 +27,24 @@ const slice = createSlice({
 
     ) => {
       state.showFeedbackDialog = !state.showFeedbackDialog;
+    },
+    setFeedbackDialogText: (
+        state,
+        {payload}: PayloadAction<{text:string}>
+    ) => {
+      state.feedbackText = payload.text;
+    },
+    updatePoints: (
+        state,
+        {payload}: PayloadAction<{points:number}>
+    ) => {
+      console.log('state points: ' + state.points)
+      state.points = state.points + payload.points;
+    },
+    initializePoints:(
+        state,
+    ) => {
+      state.points = 150;
     },
   },
 });

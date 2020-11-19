@@ -22,3 +22,4 @@ const gameTasks: { [taskId: string]: TaskData } = {
   2: task2data
 };
 export default gameTasks;
+export const POINTS_WRONG_ANSWER=-30;
