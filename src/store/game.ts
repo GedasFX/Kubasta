@@ -5,7 +5,7 @@ const slice = createSlice({
   initialState: {} as {
     activeTaskId?: string | number;
     activeScreenId?: string | number;
-    showFeedbackDialog: boolean;
+    showFeedbackDialog?: boolean;
   },
   reducers: {
     setActiveTaskId: (

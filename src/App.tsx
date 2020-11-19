@@ -9,7 +9,7 @@ import React from 'react';
 import './styles/styles.css';
 import theme from './theme';
 import QuizGame from './views/QuizGame';
-import ToolbarContent from './views/ToolbarContent';
+import ToolbarContent from './components/Toolbar';
 
 function App() {
   return (
