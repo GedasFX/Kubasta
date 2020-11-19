@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/Kubasta/static/css/main.3372a6f8.chunk.css",
-    "main.js": "/Kubasta/static/js/main.7e6a765d.chunk.js",
-    "main.js.map": "/Kubasta/static/js/main.7e6a765d.chunk.js.map",
-    "runtime-main.js": "/Kubasta/static/js/runtime-main.65897646.js",
-    "runtime-main.js.map": "/Kubasta/static/js/runtime-main.65897646.js.map",
-    "static/js/2.844a1f47.chunk.js": "/Kubasta/static/js/2.844a1f47.chunk.js",
-    "static/js/2.844a1f47.chunk.js.map": "/Kubasta/static/js/2.844a1f47.chunk.js.map",
-    "static/js/3.aac217a6.chunk.js": "/Kubasta/static/js/3.aac217a6.chunk.js",
-    "static/js/3.aac217a6.chunk.js.map": "/Kubasta/static/js/3.aac217a6.chunk.js.map",
+    "main.js": "/Kubasta/static/js/main.9ad5aeac.chunk.js",
+    "main.js.map": "/Kubasta/static/js/main.9ad5aeac.chunk.js.map",
+    "runtime-main.js": "/Kubasta/static/js/runtime-main.0c0d7d74.js",
+    "runtime-main.js.map": "/Kubasta/static/js/runtime-main.0c0d7d74.js.map",
+    "static/js/2.d7e2b185.chunk.js": "/Kubasta/static/js/2.d7e2b185.chunk.js",
+    "static/js/2.d7e2b185.chunk.js.map": "/Kubasta/static/js/2.d7e2b185.chunk.js.map",
+    "static/js/3.7ae2f857.chunk.js": "/Kubasta/static/js/3.7ae2f857.chunk.js",
+    "static/js/3.7ae2f857.chunk.js.map": "/Kubasta/static/js/3.7ae2f857.chunk.js.map",
     "index.html": "/Kubasta/index.html",
     "static/css/main.3372a6f8.chunk.css.map": "/Kubasta/static/css/main.3372a6f8.chunk.css.map",
-    "static/js/2.844a1f47.chunk.js.LICENSE.txt": "/Kubasta/static/js/2.844a1f47.chunk.js.LICENSE.txt",
+    "static/js/2.d7e2b185.chunk.js.LICENSE.txt": "/Kubasta/static/js/2.d7e2b185.chunk.js.LICENSE.txt",
     "static/media/antiviruspopup.98332630.png": "/Kubasta/static/media/antiviruspopup.98332630.png",
     "static/media/availablenetworks.1e5b6f9a.png": "/Kubasta/static/media/availablenetworks.1e5b6f9a.png",
     "static/media/connectedopennetwork.3add7549.png": "/Kubasta/static/media/connectedopennetwork.3add7549.png",
@@ -23,9 +23,9 @@
     "static/media/typeinpassword.c41db31f.png": "/Kubasta/static/media/typeinpassword.c41db31f.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.65897646.js",
-    "static/js/2.844a1f47.chunk.js",
+    "static/js/runtime-main.0c0d7d74.js",
+    "static/js/2.d7e2b185.chunk.js",
     "static/css/main.3372a6f8.chunk.css",
-    "static/js/main.7e6a765d.chunk.js"
+    "static/js/main.9ad5aeac.chunk.js"
   ]
 }
