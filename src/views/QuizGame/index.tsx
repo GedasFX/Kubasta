@@ -8,6 +8,7 @@ import { gameActions } from '../../store/game';
 import gameItems, { ScreenData } from '../../game-data';
 import FeedbackDialog from '../../components/FeedbackDialog';
 import CustomizedProgressBar from '../../components/ProgressBar';
+import { useDialogService } from 'contexts/DialogServiceContext';
 
 const useStyles = makeStyles((theme) => ({
   imgContainer: {
@@ -28,12 +29,13 @@ export default function QuizGame() {
     undefined as ScreenData | undefined
   );
 
+  const dialogService = useDialogService();
+
   useEffect(() => {
     dispatch(gameActions.setActiveTaskId({ id: 1 }));
     dispatch(
       gameActions.setActiveScreenId({ id: 'desktopnetworknotconnected' })
     );
-    dispatch(gameActions.initializePoints());
   }, [dispatch]);
 
   useEffect(() => {
@@ -43,6 +45,12 @@ export default function QuizGame() {
         : undefined
     );
   }, [gameState.activeTaskId, gameState.activeScreenId]);
+
+  useEffect(() => {
+    setInterval(() => {
+      dialogService.showDialog({ id: 5 });
+    }, 1000);
+  }, [dialogService]);
 
   if (!screenData) {
     return null;
