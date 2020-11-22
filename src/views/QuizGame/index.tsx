@@ -4,12 +4,11 @@ import React, { useEffect, useState } from 'react';
 import ActionableImage from '../../components/ActionableImage';
 import { AppState } from '../../store';
 import { useSelector, useDispatch } from 'react-redux';
-import Buttons from './Buttons';
 import { gameActions } from '../../store/game';
 import gameItems, { ScreenData } from '../../game-data';
-import FeedbackDialog from "../../components/FeedbackDialog";
-import VerticalStepper from "../../components/Stepper";
-import CustomizedProgressBar from "../../components/ProgressBar";
+import FeedbackDialog from '../../components/FeedbackDialog';
+import VerticalStepper from '../../components/Stepper';
+import CustomizedProgressBar from '../../components/ProgressBar';
 
 const useStyles = makeStyles((theme) => ({
   imgContainer: {
@@ -26,11 +25,15 @@ export default function QuizGame() {
   const dispatch = useDispatch();
   const gameState = useSelector((state: AppState) => state.game);
 
-  const [screenData, setScreenData] = useState(undefined as ScreenData | undefined);
+  const [screenData, setScreenData] = useState(
+    undefined as ScreenData | undefined
+  );
 
   useEffect(() => {
     dispatch(gameActions.setActiveTaskId({ id: 1 }));
-    dispatch(gameActions.setActiveScreenId({ id: 'desktopnetworknotconnected' }));
+    dispatch(
+      gameActions.setActiveScreenId({ id: 'desktopnetworknotconnected' })
+    );
     dispatch(gameActions.initializePoints());
   }, [dispatch]);
 
@@ -55,11 +58,8 @@ export default function QuizGame() {
         <VerticalStepper></VerticalStepper>
       </Grid>
       <Grid item xs={10} className={classes.imgContainer}>
-        <ActionableImage
-          component={screenData.component}
-          buttons={screenData.buttons}
-        />
-        <FeedbackDialog></FeedbackDialog>
+        <ActionableImage {...screenData} />
+        <FeedbackDialog />
       </Grid>
     </Grid>
   );

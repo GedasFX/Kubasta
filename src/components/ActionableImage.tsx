@@ -1,7 +1,8 @@
 import { makeStyles } from '@material-ui/core/styles';
+import { ScreenData } from 'game-data';
 import React from 'react';
-import { AppDispatch } from '../store';
-import AppButton from './AppButton';
+import AppButton from './actions/AppButton';
+import AppTextInput from './actions/AppTextInput';
 
 const useStyles = makeStyles(() => ({
   imgContainer: {
@@ -10,20 +11,20 @@ const useStyles = makeStyles(() => ({
     '& > img': {
       width: '100%',
     },
+
+    '& > *:not(img)': {
+      position: 'absolute',
+
+      background: 'transparent',
+      border: 'none',
+    },
   },
 }));
 
 // For debug, while creating tasks.
 let prevClick = { x: 0, y: 0 };
 
-export default function ActionableImage(props: {
-  component: React.ReactNode;
-  buttons: {
-    position: { top: number | string; left: number | string };
-    size: { width: number | string; height: number | string };
-    onClick?: (dispatch: AppDispatch) => void;
-  }[];
-}) {
+export default function ActionableImage(props: ScreenData) {
   const classes = useStyles();
 
   const handleContainerClick = (
@@ -48,21 +49,34 @@ export default function ActionableImage(props: {
     prevClick = posPercentage;
 
     console.info('Clicked on:', pos, posPercentage, posPercentageOffset);
+    console.info(
+      JSON.stringify({
+        position: {
+          top: `${(posPercentage.y * 100).toFixed(2)}%`,
+          left: `${(posPercentage.x * 100).toFixed(2)}%`,
+        },
+        size: {
+          height: `${(posPercentageOffset.y * 100).toFixed(2)}%`,
+          width: `${(posPercentageOffset.x * 100).toFixed(2)}%`,
+        },
+      })
+    );
   };
 
   return (
     <div className={classes.imgContainer} onClick={handleContainerClick}>
       {props.component}
-      {props.buttons.map((b, i) => {
-        return (
-          <AppButton
-            position={b.position}
-            size={b.size}
-            onClick={b.onClick}
-            key={i}
-          />
-        );
-      })}
+      {props.buttons?.map((b, i) => (
+        <AppButton
+          position={b.position}
+          size={b.size}
+          onClick={b.onClick}
+          key={i}
+        />
+      ))}
+      {props.textFields?.map((t, i) => (
+        <AppTextInput position={t.position} size={t.size} key={i} />
+      ))}
     </div>
   );
 }
