@@ -1,8 +1,8 @@
-import React, {useEffect} from 'react';
-import { makeStyles, withStyles } from '@material-ui/core/styles';
+import React, { useEffect } from 'react';
+import { withStyles } from '@material-ui/core/styles';
 import LinearProgress from '@material-ui/core/LinearProgress';
-import {useSelector} from "react-redux";
-import {AppState} from "../store";
+import { useSelector } from 'react-redux';
+import { AppState } from '../store';
 
 const BorderLinearProgress = withStyles((theme) => ({
   root: {
@@ -10,7 +10,8 @@ const BorderLinearProgress = withStyles((theme) => ({
     borderRadius: 5,
   },
   colorPrimary: {
-    backgroundColor: theme.palette.grey[theme.palette.type === 'light' ? 200 : 700],
+    backgroundColor:
+      theme.palette.grey[theme.palette.type === 'light' ? 200 : 700],
   },
   bar: {
     borderRadius: 5,
@@ -26,8 +27,8 @@ export default function CustomizedProgressBar() {
     setProgress(progress);
   }, [gameState.points]);
   return (
-      <div >
-        <BorderLinearProgress variant="determinate" value={progress} />
-      </div>
+    <div>
+      <BorderLinearProgress variant="determinate" value={progress} />
+    </div>
   );
 }

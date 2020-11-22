@@ -12,7 +12,7 @@ import CustomizedProgressBar from '../../components/ProgressBar';
 
 const useStyles = makeStyles((theme) => ({
   imgContainer: {
-    margin: theme.spacing(8, 0, 3),
+    margin: theme.spacing(4),
   },
   btnContainer: {
     margin: theme.spacing(0),
@@ -52,12 +52,12 @@ export default function QuizGame() {
   return (
     <Grid container spacing={1}>
       <Grid item xs={12}>
-        <CustomizedProgressBar></CustomizedProgressBar>
+        <CustomizedProgressBar />
       </Grid>
-      <Grid item xs={2}>
+      {/* <Grid item xs={2}>
         <VerticalStepper></VerticalStepper>
-      </Grid>
-      <Grid item xs={10} className={classes.imgContainer}>
+      </Grid> */}
+      <Grid item xs={12} className={classes.imgContainer}>
         <ActionableImage {...screenData} />
         <FeedbackDialog />
       </Grid>
