@@ -30,7 +30,7 @@ steps:
 
   - script: |
       yarn --frozen-lockfile
-    displayName: 'Install Dependecies'
+    displayName: 'Install Dependencies'
 
   - script: |
       yarn run build

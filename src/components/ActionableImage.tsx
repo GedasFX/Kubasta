@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 import React from 'react';
 import { AppDispatch } from '../store';
-import { useDispatch } from 'react-redux';
+import AppButton from './AppButton';
 
 const useStyles = makeStyles(() => ({
   imgContainer: {
@@ -9,13 +9,6 @@ const useStyles = makeStyles(() => ({
 
     '& > img': {
       width: '100%',
-    },
-
-    '& > button': {
-      position: 'absolute',
-
-      background: 'transparent',
-      border: 'none',
     },
   },
 }));
@@ -32,8 +25,6 @@ export default function ActionableImage(props: {
   }[];
 }) {
   const classes = useStyles();
-
-  const dispatch = useDispatch();
 
   const handleContainerClick = (
     e: React.MouseEvent<HTMLDivElement, MouseEvent>
@@ -64,20 +55,12 @@ export default function ActionableImage(props: {
       {props.component}
       {props.buttons.map((b, i) => {
         return (
-          <button
+          <AppButton
+            position={b.position}
+            size={b.size}
+            onClick={b.onClick}
             key={i}
-            style={{
-              top: b.position.top,
-              left: b.position.left,
-              width: b.size.width,
-              height: b.size.height,
-            }}
-            onClick={() => {
-              if (b.onClick) {
-                b.onClick(dispatch);
-              }
-            }}
-          ></button>
+          />
         );
       })}
     </div>
