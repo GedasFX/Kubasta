@@ -75,7 +75,12 @@ export default function ActionableImage(props: ScreenData) {
         />
       ))}
       {props.textFields?.map((t, i) => (
-        <AppTextInput position={t.position} size={t.size} key={i} />
+        <AppTextInput
+          position={t.position}
+          size={t.size}
+          type={t.type}
+          key={i}
+        />
       ))}
     </div>
   );

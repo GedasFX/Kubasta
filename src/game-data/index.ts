@@ -22,6 +22,7 @@ export interface ScreenData {
   }>[];
   textFields?: ScreenElement<{
     placeholder?: string;
+    type?: string;
   }>[];
 }
 

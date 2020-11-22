@@ -187,6 +187,7 @@ const task1data: TaskData = {
         {
           position: { left: '79.8%', top: '47.3%' },
           size: { height: '03.2%', width: '18.9%' },
+          type: 'password',
         },
       ],
     },

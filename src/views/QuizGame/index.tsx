@@ -7,7 +7,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { gameActions } from '../../store/game';
 import gameItems, { ScreenData } from '../../game-data';
 import FeedbackDialog from '../../components/FeedbackDialog';
-import VerticalStepper from '../../components/Stepper';
 import CustomizedProgressBar from '../../components/ProgressBar';
 
 const useStyles = makeStyles((theme) => ({
@@ -54,9 +53,6 @@ export default function QuizGame() {
       <Grid item xs={12}>
         <CustomizedProgressBar />
       </Grid>
-      {/* <Grid item xs={2}>
-        
-      </Grid> */}
       <Grid item xs={12} className={classes.imgContainer}>
         <ActionableImage {...screenData} />
         <FeedbackDialog />
