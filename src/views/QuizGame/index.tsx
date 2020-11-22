@@ -55,7 +55,7 @@ export default function QuizGame() {
         <CustomizedProgressBar />
       </Grid>
       {/* <Grid item xs={2}>
-        <VerticalStepper></VerticalStepper>
+        
       </Grid> */}
       <Grid item xs={12} className={classes.imgContainer}>
         <ActionableImage {...screenData} />

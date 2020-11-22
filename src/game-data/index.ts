@@ -4,8 +4,10 @@ import task2data from './task2';
 
 export interface TaskData {
   title: string;
-  screens: { [key: string]: ScreenData };
+  setting?: string;
+  instructions?: string;
   description: string;
+  screens: { [key: string]: ScreenData };
 }
 
 export type ScreenElement<T> = {

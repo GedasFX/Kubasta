@@ -13,7 +13,11 @@ import pressonsecurenetwork from 'assets/tasks/1/pressonsecurenetwork.png';
 import typeinpassword from 'assets/tasks/1/typeinpassword.png';
 
 const task1data: TaskData = {
-  title: 'Internet Connection',
+  title: 'Connect to Network',
+  setting:
+    'You just ordered your first coffee of the day at Starbucks. You were going to meet up there with a friend later but want to get some work done first. The cashier hands you the receipt – it has the WIFI password on it: “starplatinum”. Perfect. Time to get to work.',
+  instructions:
+    'To go online you need to connect to the network. This location has both an open and a password-protected network. Which one do you choose?',
   description: 'Connect safely to the internet',
   screens: {
     desktopnetworknotconnected: {
