@@ -216,18 +216,18 @@ const task1data: TaskData = {
         {
           position: { top: '59%', left: '79.7%' },
           size: { width: '9.7%', height: '3.8%' },
-          onClick: (dispatch) => {
-            dispatch(
-              gameActions.setActiveScreenId({ id: 'connectedsecurenetwork' })
-            );
-            dispatch(gameActions.toggleFeedbackDialog());
+          onClick: () => {
+            window.alert('fail');
           },
         },
         {
           position: { top: '59%', left: '89.5%' },
           size: { width: '9.7%', height: '3.8%' },
-          onClick: () => {
-            window.alert('fail');
+          onClick: (dispatch) => {
+            dispatch(
+                gameActions.setActiveScreenId({ id: 'connectedsecurenetwork' })
+            );
+            dispatch(gameActions.toggleFeedbackDialog());
           },
         },
       ],
