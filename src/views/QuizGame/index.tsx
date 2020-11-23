@@ -34,6 +34,7 @@ export default function QuizGame() {
       gameActions.setActiveScreenId({ id: 'desktopnetworknotconnected' })
     );
     dispatch(gameActions.initializePoints());
+    dispatch(gameActions.initializeFeedbackDialogDisplay())
   }, [dispatch]);
 
   useEffect(() => {

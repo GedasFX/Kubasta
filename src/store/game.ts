@@ -26,7 +26,6 @@ const slice = createSlice({
         state,
 
     ) => {
-      state.showFeedbackDialog = !state.showFeedbackDialog;
     },
     setFeedbackDialogText: (
         state,
@@ -45,6 +44,11 @@ const slice = createSlice({
         state,
     ) => {
       state.points = 150;
+    },
+    initializeFeedbackDialogDisplay:(
+      state
+    ) => {
+      state.showFeedbackDialog=false;
     },
   },
 });
