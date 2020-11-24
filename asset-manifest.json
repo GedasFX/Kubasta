@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Kubasta/static/css/main.3372a6f8.chunk.css",
-    "main.js": "/Kubasta/static/js/main.9d8f0bd9.chunk.js",
-    "main.js.map": "/Kubasta/static/js/main.9d8f0bd9.chunk.js.map",
+    "main.js": "/Kubasta/static/js/main.7d9454a8.chunk.js",
+    "main.js.map": "/Kubasta/static/js/main.7d9454a8.chunk.js.map",
     "runtime-main.js": "/Kubasta/static/js/runtime-main.13d037f9.js",
     "runtime-main.js.map": "/Kubasta/static/js/runtime-main.13d037f9.js.map",
-    "static/js/2.9496b4b4.chunk.js": "/Kubasta/static/js/2.9496b4b4.chunk.js",
-    "static/js/2.9496b4b4.chunk.js.map": "/Kubasta/static/js/2.9496b4b4.chunk.js.map",
+    "static/js/2.27ee4f67.chunk.js": "/Kubasta/static/js/2.27ee4f67.chunk.js",
+    "static/js/2.27ee4f67.chunk.js.map": "/Kubasta/static/js/2.27ee4f67.chunk.js.map",
     "index.html": "/Kubasta/index.html",
     "static/css/main.3372a6f8.chunk.css.map": "/Kubasta/static/css/main.3372a6f8.chunk.css.map",
-    "static/js/2.9496b4b4.chunk.js.LICENSE.txt": "/Kubasta/static/js/2.9496b4b4.chunk.js.LICENSE.txt",
+    "static/js/2.27ee4f67.chunk.js.LICENSE.txt": "/Kubasta/static/js/2.27ee4f67.chunk.js.LICENSE.txt",
     "static/media/antiviruspopup.98332630.png": "/Kubasta/static/media/antiviruspopup.98332630.png",
     "static/media/antivirussettingsoff.0443898b.png": "/Kubasta/static/media/antivirussettingsoff.0443898b.png",
     "static/media/antivirussettingson.52d29d00.png": "/Kubasta/static/media/antivirussettingson.52d29d00.png",
@@ -25,8 +25,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.13d037f9.js",
-    "static/js/2.9496b4b4.chunk.js",
+    "static/js/2.27ee4f67.chunk.js",
     "static/css/main.3372a6f8.chunk.css",
-    "static/js/main.9d8f0bd9.chunk.js"
+    "static/js/main.7d9454a8.chunk.js"
   ]
 }
