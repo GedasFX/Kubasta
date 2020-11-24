@@ -24,6 +24,7 @@ export interface ScreenData {
   textFields?: ScreenElement<{
     placeholder?: string;
     type?: string;
+    onChange?:(newValue:string, dispatch: AppDispatch) => void;
   }>[];
 }
 

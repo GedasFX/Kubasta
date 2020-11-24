@@ -29,11 +29,23 @@ export default function QuizGame() {
 
   useEffect(() => {
     dispatch(gameActions.initializeFeedbackDialog())
-    dispatch(gameActions.setActiveTaskId({ id: 2 }));
+    dispatch(gameActions.setActiveTaskId({ id: 1 }));
     dispatch(
-      gameActions.setActiveScreenId({ id: 'antiviruspopup' })
+        gameActions.setActiveScreenId({ id: 'desktopnetworknotconnected' })
     );
+
+
+    // dispatch(gameActions.setActiveTaskId({ id: 2 }));
+    // dispatch(
+    //     gameActions.setActiveScreenId({ id: 'antiviruspopup' })
+    // );
+
+    //dispatch(gameActions.setActiveTaskId({ id: 3 }));
+    //dispatch(
+    //    gameActions.setActiveScreenId({ id: 'changepassword' })
+    //);
     dispatch(gameActions.initializePoints());
+    dispatch(gameActions.setUserInput({userInput:''}));
   }, [dispatch]);
 
   useEffect(() => {

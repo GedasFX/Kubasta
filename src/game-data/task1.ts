@@ -224,9 +224,7 @@ const task1data: TaskData = {
           position: { top: '59%', left: '89.5%' },
           size: { width: '9.7%', height: '3.8%' },
           onClick: (dispatch) => {
-            dispatch(
-                gameActions.setActiveScreenId({ id: 'connectedsecurenetwork' })
-            );
+            dispatch(gameActions.setActiveScreenId({ id: 'connectedsecurenetwork' }));
             dispatch(gameActions.updatePoints({points: 10}))
             dispatch(gameActions.setNextTaskAndScreen({nextScreenId:'antiviruspopup', nextTaskId:2}))
             dispatch(gameActions.setFeedbackDialogText({ text: "Good! It’s always better to leave attackers the least possible amount of attack surface, which you just did." }));

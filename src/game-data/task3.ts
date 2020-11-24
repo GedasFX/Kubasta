@@ -1,7 +1,6 @@
 import { TaskData } from '.';
 import { fromUrl } from '../components/AppImage';
 import { gameActions } from 'store/game';
-import { POINTS_WRONG_ANSWER } from './';
 
 import changepassword from 'assets/tasks/3/changepassword.png';
 
@@ -24,6 +23,40 @@ const task1data: TaskData = {
             //   gameActions.setActiveScreenId({ id: 'availablenetworks' })
             // );
           },
+        },
+        {
+          position: { left: '7.28%', top: '71.87%' },
+          size: { width: '15.75%', height: '10.17%' },
+          onClick: (dispatch) => {
+            dispatch(
+              gameActions.task3Feedback({ twoFactorSelected:true })
+            );
+          },
+        },
+        {
+          position: { left: '48.63%', top: '71.87%' },
+          size: { width: '32.02%', height: '10.17%' },
+          onClick: (dispatch) => {
+            dispatch(
+              gameActions.task3Feedback({twoFactorSelected:false})
+            );
+          },
+        },
+      ],
+      textFields: [
+        {
+          position: { left: '5.99%', top: '39.03%' },
+          size: { height: '5.84%', width: '74.83%' },
+          type: 'password',
+        },
+        {
+          position: { left: '5.99%', top: '56.21%' },
+          size: { height: '5.84%', width: '74.83%' },
+          type: 'password',
+          onChange: ((newValue:string, dispatch) => {
+            console.log('new input value: ' + newValue);
+            dispatch(gameActions.setUserInput({userInput:newValue}));
+          })
         },
       ],
     },
