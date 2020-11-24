@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Kubasta/static/css/main.3372a6f8.chunk.css",
-    "main.js": "/Kubasta/static/js/main.60a8700f.chunk.js",
-    "main.js.map": "/Kubasta/static/js/main.60a8700f.chunk.js.map",
+    "main.js": "/Kubasta/static/js/main.9d8f0bd9.chunk.js",
+    "main.js.map": "/Kubasta/static/js/main.9d8f0bd9.chunk.js.map",
     "runtime-main.js": "/Kubasta/static/js/runtime-main.13d037f9.js",
     "runtime-main.js.map": "/Kubasta/static/js/runtime-main.13d037f9.js.map",
     "static/js/2.9496b4b4.chunk.js": "/Kubasta/static/js/2.9496b4b4.chunk.js",
@@ -12,7 +12,9 @@
     "static/js/2.9496b4b4.chunk.js.LICENSE.txt": "/Kubasta/static/js/2.9496b4b4.chunk.js.LICENSE.txt",
     "static/media/antiviruspopup.98332630.png": "/Kubasta/static/media/antiviruspopup.98332630.png",
     "static/media/antivirussettingsoff.0443898b.png": "/Kubasta/static/media/antivirussettingsoff.0443898b.png",
+    "static/media/antivirussettingson.52d29d00.png": "/Kubasta/static/media/antivirussettingson.52d29d00.png",
     "static/media/availablenetworks.1e5b6f9a.png": "/Kubasta/static/media/availablenetworks.1e5b6f9a.png",
+    "static/media/changepassword.02533d2c.png": "/Kubasta/static/media/changepassword.02533d2c.png",
     "static/media/connectedopennetwork.3add7549.png": "/Kubasta/static/media/connectedopennetwork.3add7549.png",
     "static/media/connectedsecurenetwork.16346748.png": "/Kubasta/static/media/connectedsecurenetwork.16346748.png",
     "static/media/desktopnetworknotconnected.1d992857.png": "/Kubasta/static/media/desktopnetworknotconnected.1d992857.png",
@@ -25,6 +27,6 @@
     "static/js/runtime-main.13d037f9.js",
     "static/js/2.9496b4b4.chunk.js",
     "static/css/main.3372a6f8.chunk.css",
-    "static/js/main.60a8700f.chunk.js"
+    "static/js/main.9d8f0bd9.chunk.js"
   ]
 }
