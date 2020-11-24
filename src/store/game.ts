@@ -80,10 +80,10 @@ const slice = createSlice({
       }
       if (state.userInput.length >= 12) {
         state.points += 5;
-        state.feedbackText += "<\\br> Good job for selecting a safe password";
+        state.feedbackText += " Good job for selecting a safe password";
       } else {
         state.points -= 5;
-        state.feedbackText += "<\\br> You’re making it too easy! The password you chose was too easy to guess and compute. A safe password should have a minimum length of 12.”";
+        state.feedbackText += " You’re making it too easy! The password you chose was too easy to guess and compute. A safe password should have a minimum length of 12.";
       }
       state.nextTaskId = 4;
       state.nextScreenId = '';
