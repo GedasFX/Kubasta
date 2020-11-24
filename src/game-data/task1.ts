@@ -227,6 +227,8 @@ const task1data: TaskData = {
             dispatch(
                 gameActions.setActiveScreenId({ id: 'connectedsecurenetwork' })
             );
+            dispatch(gameActions.updatePoints({points: 10}))
+            dispatch(gameActions.setNextTaskAndScreen({nextScreenId:'antiviruspopup', nextTaskId:2}))
             dispatch(gameActions.setFeedbackDialogText({ text: "Good! It’s always better to leave attackers the least possible amount of attack surface, which you just did." }));
             dispatch(gameActions.toggleFeedbackDialog());
           },

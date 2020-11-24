@@ -8,6 +8,8 @@ const slice = createSlice({
     showFeedbackDialog?: boolean;
     points:number;
     feedbackText:string;
+    nextTaskId:number;
+    nextScreenId:string;
   },
   reducers: {
     setActiveTaskId: (
@@ -52,6 +54,13 @@ const slice = createSlice({
       state.showFeedbackDialog = false;
       state.feedbackText = '';
     },
+    setNextTaskAndScreen:(
+      state,
+      {payload}: PayloadAction<{nextTaskId:number, nextScreenId:string}>
+    ) => {
+      state.nextTaskId=payload.nextTaskId;
+      state.nextScreenId=payload.nextScreenId;
+    }
   },
 });
 

@@ -29,9 +29,9 @@ export default function QuizGame() {
 
   useEffect(() => {
     dispatch(gameActions.initializeFeedbackDialog())
-    dispatch(gameActions.setActiveTaskId({ id: 1 }));
+    dispatch(gameActions.setActiveTaskId({ id: 2 }));
     dispatch(
-      gameActions.setActiveScreenId({ id: 'desktopnetworknotconnected' })
+      gameActions.setActiveScreenId({ id: 'antiviruspopup' })
     );
     dispatch(gameActions.initializePoints());
   }, [dispatch]);

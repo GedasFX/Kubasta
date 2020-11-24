@@ -2,6 +2,7 @@ import { TaskData } from './index';
 import { fromUrl } from '../components/AppImage';
 import antiviruspopup from '../assets/tasks/2/antiviruspopup.png';
 import antivirussettingsoff from '../assets/tasks/2/antivirussettingsoff.png';
+import antivirussettingson from '../assets/tasks/2/antivirussettingson.png';
 import { gameActions } from 'store/game';
 const task2data: TaskData = {
   title: 'Antivirus',
@@ -26,17 +27,38 @@ const task2data: TaskData = {
           position: {left: '38.88%', top: '50.53%'},
           size: {width: '2.75%', height: '2.35%'},
           onClick: (dispatch) => {
-            window.alert('yes');
+            dispatch(gameActions.updatePoints({points:10}));
+            dispatch(gameActions.setActiveScreenId({id:'antivirussettingson'}));
+            dispatch(gameActions.setNextTaskAndScreen({nextScreenId:'changepassword', nextTaskId:3}))
+            dispatch(gameActions.setFeedbackDialogText({text:"Alright! Now you are finally protected from known threats again. Never turn off your antivirus program, even if a software asks for it!"}))
+            dispatch(gameActions.toggleFeedbackDialog());
           },
         },
         {
           position: {left: '79.32%', top: '1.22%'},
           size: {width: '2.65%', height: '3.35%'},
           onClick: (dispatch) => {
-            window.alert('no');
+            dispatch(gameActions.updatePoints({points:-10}));
+            dispatch(gameActions.setNextTaskAndScreen({nextScreenId:'changepassword', nextTaskId:3}))
+            dispatch(gameActions.setFeedbackDialogText({text:"What are you doing?! You were supposed to turn on the antivirus software! Even just the default Windows virus & threat protection will keep you safe from known malware and attacks. "}))
+            dispatch(gameActions.toggleFeedbackDialog());
+          },
+        },
+        {
+          position: {left: '38.88%', top: '75.5%'},
+          size: {width: '2.65%', height: '2.35%'},
+          onClick: (dispatch) => {
+            dispatch(gameActions.updatePoints({points:-10}));
+            dispatch(gameActions.setNextTaskAndScreen({nextScreenId:'changepassword', nextTaskId:3}))
+            dispatch(gameActions.setFeedbackDialogText({text:"What are you doing?! You were supposed to turn on the antivirus software, not turn it off even further! Even just the default Windows virus & threat protection will keep you safe from known malware and attacks."}))
+            dispatch(gameActions.toggleFeedbackDialog());
           },
         }
       ]
+    },
+    antivirussettingson: {
+      component: fromUrl(antivirussettingson),
+      buttons : []
     }
   },
 };

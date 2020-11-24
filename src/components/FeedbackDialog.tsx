@@ -25,8 +25,10 @@ export default function FeedbackDialog(
   const dispatch = useDispatch();
   const onConfirmation = function() {
       dispatch(gameActions.toggleFeedbackDialog())
-      dispatch(gameActions.setActiveTaskId({id: 2}));
-      dispatch(gameActions.setActiveScreenId({id: 'antiviruspopup'}));
+      console.log(gameState.nextScreenId);
+      console.log(gameState.nextTaskId);
+      dispatch(gameActions.setActiveTaskId({id: gameState.nextTaskId}));
+      dispatch(gameActions.setActiveScreenId({id: gameState.nextScreenId}));
 
   }
     const [isOpen, setIsOpen] = useState(false);
