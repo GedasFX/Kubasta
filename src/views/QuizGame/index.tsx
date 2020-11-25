@@ -28,9 +28,9 @@ export default function QuizGame() {
   );
 
   useEffect(() => {
-    dispatch(gameActions.setActiveTaskId({ id: 20 }));
+    dispatch(gameActions.setActiveTaskId({ id: 18 }));
     dispatch(
-      gameActions.setActiveScreenId({ id: 'main' })
+      gameActions.setActiveScreenId({ id: 'camera1' })
     );
   }, [dispatch]);
 
