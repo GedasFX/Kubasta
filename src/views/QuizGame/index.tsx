@@ -28,9 +28,9 @@ export default function QuizGame() {
   );
 
   useEffect(() => {
-    dispatch(gameActions.setActiveTaskId({ id: 1 }));
+    dispatch(gameActions.setActiveTaskId({ id: 20 }));
     dispatch(
-      gameActions.setActiveScreenId({ id: 'desktopnetworknotconnected' })
+      gameActions.setActiveScreenId({ id: 'main' })
     );
   }, [dispatch]);
 

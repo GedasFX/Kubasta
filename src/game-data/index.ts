@@ -17,6 +17,7 @@ import task13data from './task13';
 import task14data from './task14';
 import task15data from './task15';
 import task19data from './task19';
+import task20data from './task20';
 
 export interface TaskData {
   title: string;
@@ -66,6 +67,7 @@ const gameTasks: { [taskId: string]: TaskData } = {
   14: task14data,
   15: task15data,
   19: task19data,
+  20: task20data,
 };
 export default gameTasks;
 export const POINTS_WRONG_ANSWER = -30;

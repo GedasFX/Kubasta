@@ -2,7 +2,7 @@ import { TaskData } from '.';
 import { fromUrl } from '../components/AppImage';
 import { gameActions } from 'store/game';
 
-import ransomwaredesktop from 'assets/tasks/14/ransomwaredesktop.png';
+import ransomwaredesktop from 'assets/tasks/19/ransomwaredesktop.png';
 
 const task19data: TaskData = {
   title: 'Ransomware',
@@ -24,8 +24,8 @@ const task19data: TaskData = {
               gameActions.openFeedbackDialog({
                 text: 'Good job! You know not to trust weird popups.',
                 next: {
-                  taskId: 15,
-                  screenId: '',
+                  taskId: 20,
+                  screenId: 'main',
                 },
               })
             );
