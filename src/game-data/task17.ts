@@ -4,7 +4,7 @@ import { gameActions } from 'store/game';
 
 import movies from 'assets/tasks/12/Websites-Movies online.png';
 const nextTaskId = 18;
-const nextScreenId = '';
+const nextScreenId = 'camera1';
 
 const task17data: TaskData = {
     title:'Movies',

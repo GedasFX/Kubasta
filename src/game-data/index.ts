@@ -12,12 +12,15 @@ import task8data from './task8';
 import task9data from './task9';
 import task10data from './task10';
 import task11data from './task11';
-import task12data from "./task12";
-import task13data from "./task13";
-import task14data from "./task14";
-import task15data from "./task15";
-import task16data from "./task16";
-import task17data from "./task17";
+import task12data from './task12';
+import task13data from './task13';
+import task14data from './task14';
+import task15data from './task15';
+import task16data from './task16';
+import task17data from './task17';
+import task18data from './task18';
+import task19data from './task19';
+import task20data from './task20';
 
 export interface TaskData {
   title: string;
@@ -60,14 +63,17 @@ const gameTasks: { [taskId: string]: TaskData } = {
   7: task7data,
   8: task8data,
   9: task9data,
-  10:task10data,
-  11:task11data,
-  12:task12data,
-  13:task13data,
-  14:task14data,
-  15:task15data,
-  16:task16data,
-  17:task17data
+  10: task10data,
+  11: task11data,
+  12: task12data,
+  13: task13data,
+  14: task14data,
+  15: task15data,
+  16: task16data,
+  17: task17data,
+  18: task18data,
+  19: task19data,
+  20: task20data,
 };
 export default gameTasks;
 export const POINTS_WRONG_ANSWER = -30;

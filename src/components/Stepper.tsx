@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 import { AppState } from '../store';
 
 function getSteps() {
-  const keys = Object.keys(gameItems).sort();
+  const keys = Object.keys(gameItems);
   return keys.map((x) => gameItems[x].title);
 }
 
