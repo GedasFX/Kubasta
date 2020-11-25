@@ -7,6 +7,7 @@ import gameItems from 'game-data';
 import Typography from '@material-ui/core/Typography';
 import { useSelector } from 'react-redux';
 import { AppState } from '../store';
+import PerfectScrollbar from 'react-perfect-scrollbar';
 
 function getSteps() {
   const keys = Object.keys(gameItems);
@@ -31,17 +32,19 @@ export default function VerticalStepper() {
     }
   }, [gameState.activeTaskId]);
   return (
-    <div>
-      <Stepper activeStep={activeStep} orientation="vertical">
-        {steps.map((label, index) => (
-          <Step key={label}>
-            <StepLabel>{label}</StepLabel>
-            <StepContent>
-              <Typography>{getStepContent(index)}</Typography>
-            </StepContent>
-          </Step>
-        ))}
-      </Stepper>
+    <div style={{ height: '100%', overflowY: 'auto' }}>
+      <PerfectScrollbar>
+        <Stepper activeStep={activeStep} orientation="vertical">
+          {steps.map((label, index) => (
+            <Step key={label}>
+              <StepLabel>{label}</StepLabel>
+              <StepContent>
+                <Typography>{getStepContent(index)}</Typography>
+              </StepContent>
+            </Step>
+          ))}
+        </Stepper>
+      </PerfectScrollbar>
     </div>
   );
 }

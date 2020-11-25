@@ -22,8 +22,16 @@ function TabPanel(
   }>
 ) {
   return (
-    <div role="tabpanel" hidden={props.activeTabId !== props.tabId}>
-      {props.activeTabId === props.tabId && <Box p={3}>{props.children}</Box>}
+    <div
+      role="tabpanel"
+      hidden={props.activeTabId !== props.tabId}
+      style={{ height: 'calc(100% - 48px)' }}
+    >
+      {props.activeTabId === props.tabId && (
+        <Box p={3} style={{ height: '100%' }}>
+          {props.children}
+        </Box>
+      )}
     </div>
   );
 }
