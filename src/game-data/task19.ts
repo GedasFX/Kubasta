@@ -22,7 +22,8 @@ const task19data: TaskData = {
             dispatch(gameActions.updatePoints({ points: 10 }));
             dispatch(
               gameActions.openFeedbackDialog({
-                text: 'Good job! You know not to trust weird popups.',
+                title: 'Good job!',
+                text: 'You know not to trust weird popups.',
                 next: {
                   taskId: 20,
                   screenId: 'main',
@@ -38,8 +39,9 @@ const task19data: TaskData = {
             dispatch(gameActions.updatePoints({ points: -10 }));
             dispatch(
               gameActions.openFeedbackDialog({
+                title: 'What?!',
                 text:
-                  'What - you just click any link you see? The first step would be to check if your files are corrupted, and even then, clicking a link is most likely what the attacker wants you to do. How can you trust the word of someone who encrypted your files in the first place?',
+                  'Do you just click any link you see? The first step would be to check if your files are corrupted, and even then, clicking a link is most likely what the attacker wants you to do. How can you trust the word of someone who encrypted your files in the first place?',
                 next: {
                   taskId: 1,
                   screenId: 'desktopnetworknotconnected',

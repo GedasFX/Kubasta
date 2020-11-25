@@ -1,7 +1,6 @@
 import { TaskData } from '.';
 import { fromUrl } from '../components/AppImage';
 import { gameActions } from 'store/game';
-import { POINTS_WRONG_ANSWER } from './';
 
 import availablenetworks from 'assets/tasks/1/availablenetworks.png';
 import connectedopennetwork from 'assets/tasks/1/connectedopennetwork.png';
@@ -11,7 +10,6 @@ import desktopnetworknotconnected from 'assets/tasks/1/desktopnetworknotconnecte
 import pressonopennetwork from 'assets/tasks/1/pressonopennetwork.png';
 import pressonsecurenetwork from 'assets/tasks/1/pressonsecurenetwork.png';
 import typeinpassword from 'assets/tasks/1/typeinpassword.png';
-import welcome from 'assets/tasks/1/welcome_screen.png'
 
 const task1data: TaskData = {
   title: 'Connect to Network',
@@ -21,20 +19,6 @@ const task1data: TaskData = {
     'To go online you need to connect to the network. This location has both an open and a password-protected network. Which one do you choose?',
   description: 'Connect safely to the internet',
   screens: {
-    welcome: {
-      component: fromUrl(welcome),
-      buttons: [
-        {
-        "position":{"top":"67.16%","left":"41.18%"},
-          "size":{"height":"17.06%","width":"17.55%"},
-          onClick: ({ dispatch }) => {
-            dispatch(
-                gameActions.setActiveScreenId({ id: 'desktopnetworknotconnected' })
-            );
-          },
-        }
-      ]
-    },
     desktopnetworknotconnected: {
       component: fromUrl(desktopnetworknotconnected),
       buttons: [
@@ -148,14 +132,15 @@ const task1data: TaskData = {
           position: { left: '89.5%', top: '45.45%' },
           size: { width: '9.5%', height: '3.5%' },
           onClick: ({ dispatch }) => {
-            dispatch(gameActions.updatePoints({ points: POINTS_WRONG_ANSWER }));
+            dispatch(gameActions.updatePoints({ points: -10 }));
             dispatch(
               gameActions.setActiveScreenId({ id: 'connectedopennetwork' })
             );
             dispatch(
               gameActions.openFeedbackDialog({
+                title: 'Oh no!',
                 text:
-                  'Oh no! Open networks should be avoided whenever possible. Accessing sensitive information on such networks can result in that data getting compromised, e.g. login data to your banking. If given the choice, it is usually better to connect to a secured network.',
+                  'Open networks should be avoided whenever possible. Accessing sensitive information on such networks can result in that data getting compromised, e.g. login data to your banking. If given the choice, it is usually better to connect to a secured network.',
                 next: {
                   taskId: 1,
                   screenId: 'desktopnetworknotconnected',
@@ -195,10 +180,19 @@ const task1data: TaskData = {
         {
           position: { top: '52.1%', left: '79.7%' },
           size: { width: '9.7%', height: '3.8%' },
-          onClick: ({ dispatch }) => {
-            dispatch(
-              gameActions.setActiveScreenId({ id: 'discoverableonnetwork' })
-            );
+          onClick: ({ dispatch, state }) => {
+            if (state.userInput['task1wifipassword'] === 'starplatinum') {
+              dispatch(
+                gameActions.setActiveScreenId({ id: 'discoverableonnetwork' })
+              );
+            } else {
+              dispatch(
+                gameActions.openFeedbackDialog({
+                  title: 'Incorrect password!',
+                  text: 'Hint: check the task description for the password.',
+                })
+              );
+            }
           },
         },
       ],
@@ -207,6 +201,11 @@ const task1data: TaskData = {
           position: { left: '79.8%', top: '47.3%' },
           size: { height: '03.2%', width: '18.9%' },
           type: 'password',
+          onChange: (value: string, { dispatch }) => {
+            dispatch(
+              gameActions.setUserInput({ key: 'task1wifipassword', value })
+            );
+          },
         },
       ],
     },
@@ -239,6 +238,7 @@ const task1data: TaskData = {
             dispatch(gameActions.updatePoints({ points: -5 }));
             dispatch(
               gameActions.openFeedbackDialog({
+                title: 'Oh no!',
                 text:
                   'It is good to choose the secured network, but it is better to choose to be undiscoverable on the network.',
                 next: {
@@ -259,8 +259,9 @@ const task1data: TaskData = {
             dispatch(gameActions.updatePoints({ points: 10 }));
             dispatch(
               gameActions.openFeedbackDialog({
+                title: 'Great job!',
                 text:
-                  'Good! It’s always better to leave attackers the least possible amount of attack surface, which you just did.',
+                  'It’s always better to leave attackers the least possible amount of attack surface, which you just did.',
                 next: {
                   screenId: 'antiviruspopup',
                   taskId: 2,
@@ -272,7 +273,6 @@ const task1data: TaskData = {
       ],
     },
   },
-  buttons: [],
 };
 
 export default task1data;

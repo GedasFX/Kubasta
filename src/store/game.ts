@@ -13,6 +13,7 @@ const slice = createSlice({
 
     showFeedbackDialog: false,
     feedbackText: '',
+    feedbackTitle: '',
 
     userInput: {},
   } as {
@@ -23,6 +24,7 @@ const slice = createSlice({
 
     showFeedbackDialog: boolean;
     feedbackText: string;
+    feedbackTitle: string;
     nextTaskId: string | number;
     nextScreenId: string | number;
 
@@ -49,12 +51,14 @@ const slice = createSlice({
       {
         payload,
       }: PayloadAction<{
+        title: string;
         text: string;
         next?: { taskId?: string | number; screenId?: string | number };
       }>
     ) => {
       state.showFeedbackDialog = true;
       state.feedbackText = payload.text;
+      state.feedbackTitle = payload.title;
 
       state.nextTaskId = payload.next?.taskId ?? state.activeTaskId;
       state.nextScreenId = payload.next?.screenId ?? state.activeScreenId;

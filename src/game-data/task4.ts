@@ -44,15 +44,15 @@ const task4data: TaskData = {
           onClick: ({ dispatch }) => {
             dispatch(
               gameActions.openFeedbackDialog({
+                title: 'Game over!',
                 text:
-                  'Game over! Don’t get tricked by malicious ads. That’s how you actually infect your computer.',
+                  'Never ever get tricked by malicious ads. That’s how you actually infect your computer.',
                 next: {
                   taskId: 1,
                   screenId: 'desktopnetworknotconnected',
                 },
               })
             );
-
           },
         },
       ],

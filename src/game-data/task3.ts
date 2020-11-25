@@ -34,16 +34,17 @@ const task1data: TaskData = {
 
             if (password.length >= 12) {
               points += 5;
-              feedbackText += ' Good job for selecting a safe password';
+              feedbackText += ' Bonus points for selecting a safe password';
             } else {
               points -= 5;
               feedbackText +=
-                ' You’re making it too easy! The password you chose was too easy to guess and compute. A safe password should have a minimum length of 12.';
+                ' You’re also making it too easy! The password you chose was too easy to guess and compute. A safe password should have a minimum length of 12.';
             }
 
             dispatch(gameActions.updatePoints({ points }));
             dispatch(
               gameActions.openFeedbackDialog({
+                title: points > 0 ? 'Good job!' : 'Uh oh!',
                 text: feedbackText,
                 next: {
                   taskId: 4,
@@ -65,16 +66,17 @@ const task1data: TaskData = {
 
             if (password.length >= 12) {
               points += 5;
-              feedbackText += ' Good job for selecting a safe password';
+              feedbackText += ' Bonus points selecting a safe password';
             } else {
               points -= 5;
               feedbackText +=
-                ' You’re making it too easy! The password you chose was too easy to guess and compute. A safe password should have a minimum length of 12.';
+                ' You’re also making it too easy! The password you chose was too easy to guess and compute. A safe password should have a minimum length of 12.';
             }
 
             dispatch(gameActions.updatePoints({ points }));
             dispatch(
               gameActions.openFeedbackDialog({
+                title: points > 0 ? 'Good job!' : 'Uh oh!',
                 text: feedbackText,
                 next: {
                   taskId: 4,

@@ -24,8 +24,9 @@ const task18data: TaskData = {
             dispatch(gameActions.updatePoints({ points: -10 }));
             dispatch(
               gameActions.openFeedbackDialog({
+                title: 'Be careful!',
                 text:
-                  'Be careful! You shouldn’t allow websites to access everything they ask for, always think – why does this website need to use my camera?',
+                  'You shouldn’t allow websites to access everything they ask for, always think – why does this website need to use my camera?',
                 next: {
                   taskId: 19,
                   screenId: 'ransomware',
@@ -43,8 +44,9 @@ const task18data: TaskData = {
             dispatch(gameActions.updatePoints({ points: 10 }));
             dispatch(
               gameActions.openFeedbackDialog({
+                title: 'Great!',
                 text:
-                  'Great! You should only allow access when you know you need to use the camera.',
+                  'You should only allow access when you know you need to use the camera.',
                 next: {
                   taskId: 19,
                   screenId: 'ransomware',
@@ -62,8 +64,9 @@ const task18data: TaskData = {
             dispatch(gameActions.updatePoints({ points: 5 }));
             dispatch(
               gameActions.openFeedbackDialog({
+                title: 'Good!',
                 text:
-                  'Good! Clicking block will never make this pop up, but as long as you never click allow you are safe.',
+                  'Clicking block will never make this pop up, but as long as you never click allow you are safe.',
                 next: {
                   taskId: 19,
                   screenId: 'ransomware',

@@ -35,8 +35,9 @@ const task2data: TaskData = {
             );
             dispatch(
               gameActions.openFeedbackDialog({
+                title: 'Alright!',
                 text:
-                  'Alright! Now you are finally protected from known threats again. Never turn off your antivirus program, even if a software asks for it!',
+                  'Now you are finally protected from known threats again. Never turn off your antivirus program, even if a software asks for it!',
                 next: {
                   screenId: 'changepassword',
                   taskId: 3,
@@ -52,8 +53,9 @@ const task2data: TaskData = {
             dispatch(gameActions.updatePoints({ points: -10 }));
             dispatch(
               gameActions.openFeedbackDialog({
+                title: 'What are you doing?!',
                 text:
-                  'What are you doing?! You were supposed to turn on the antivirus software! Even just the default Windows virus & threat protection will keep you safe from known malware and attacks.',
+                  'You were supposed to turn on the antivirus software! Even just the default Windows virus & threat protection will keep you safe from known malware and attacks.',
                 next: {
                   screenId: 'changepassword',
                   taskId: 3,
@@ -69,8 +71,9 @@ const task2data: TaskData = {
             dispatch(gameActions.updatePoints({ points: -10 }));
             dispatch(
               gameActions.openFeedbackDialog({
+                title: 'What are you doing?!',
                 text:
-                  'What are you doing?! You were supposed to turn on the antivirus software, not turn it off even further! Even just the default Windows virus & threat protection will keep you safe from known malware and attacks.',
+                  'You were supposed to turn on the antivirus software, not turn it off even further! Even just the default Windows virus & threat protection will keep you safe from known malware and attacks.',
                 next: {
                   screenId: 'changepassword',
                   taskId: 3,
@@ -83,7 +86,6 @@ const task2data: TaskData = {
     },
     antivirussettingson: {
       component: fromUrl(antivirussettingson),
-      buttons: [],
     },
   },
 };
