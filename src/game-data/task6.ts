@@ -29,6 +29,7 @@ const task6data: TaskData = {
                             }
 
                         }));
+                        dispatch(gameActions.updatePoints({ points: -5 }));
                     }
                 },
         //report spam button
