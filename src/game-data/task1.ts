@@ -220,8 +220,18 @@ const task1data: TaskData = {
         {
           position: { top: '59%', left: '79.7%' },
           size: { width: '9.7%', height: '3.8%' },
-          onClick: () => {
-            window.alert('fail');
+          onClick: ({dispatch}) => {
+            dispatch(gameActions.updatePoints({ points: -5 }));
+            dispatch(
+                gameActions.openFeedbackDialog({
+                  text:
+                      'It is good to choose the secured network, but it is better to choose to be undiscoverable on the network.',
+                  next: {
+                    screenId: 'antiviruspopup',
+                    taskId: 2,
+                  },
+                })
+            );
           },
         },
         {
@@ -248,36 +258,7 @@ const task1data: TaskData = {
     },
   },
   buttons: [
-    {
-      text: 'dawdawa',
-      onClick: ({ dispatch, state }) => {
-        console.log(dispatch, state);
-      },
-    },
-    {
-      text: 'dawdawa',
-      onClick: ({ dispatch, state }) => {
-        console.log(dispatch, state);
-      },
-    },
-    {
-      text: 'dawdawa',
-      onClick: ({ dispatch, state }) => {
-        console.log(dispatch, state);
-      },
-    },
-    {
-      text: 'dawdawa',
-      onClick: ({ dispatch, state }) => {
-        console.log(dispatch, state);
-      },
-    },
-    {
-      text: 'dawdawa',
-      onClick: ({ dispatch, state }) => {
-        console.log(dispatch, state);
-      },
-    },
+
   ],
 };
 
