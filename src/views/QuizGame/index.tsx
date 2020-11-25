@@ -37,7 +37,7 @@ export default function QuizGame() {
   useEffect(() => {
     setScreenData(
       gameState.activeTaskId && gameState.activeScreenId
-        ? gameItems[gameState.activeTaskId].screens[gameState.activeScreenId]
+        ? gameItems[gameState.activeTaskId]?.screens[gameState.activeScreenId]
         : undefined
     );
   }, [gameState.activeTaskId, gameState.activeScreenId]);

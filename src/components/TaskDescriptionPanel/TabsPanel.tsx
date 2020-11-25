@@ -71,8 +71,8 @@ export default function TabsPanel(props: {
         </Typography>
         {props.buttons ? (
           <Grid container spacing={1}>
-            {props.buttons.map((b) => (
-              <Grid item xs={6}>
+            {props.buttons.map((b, i) => (
+              <Grid item xs={6} key={i}>
                 <Button
                   fullWidth
                   variant="outlined"
