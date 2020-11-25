@@ -5,7 +5,7 @@ import { gameActions } from 'store/game';
 import blackmail from 'assets/tasks/7/Email- Blackmail.png';
 
 const task7data: TaskData = {
-    title: 'Emails',
+    title: 'Blackmail',
     setting:
         'It is time to read your emails. In your mailbox, there are several emails.',
     instructions:

@@ -5,7 +5,7 @@ import { gameActions } from 'store/game';
 import moneytransfer from 'assets/tasks/8/Email- Money transfer.png';
 
 const task8data: TaskData = {
-    title: 'Emails',
+    title: 'Money transfer',
     setting:
         'It is time to read your emails. In your mailbox, there are several emails.',
     instructions:

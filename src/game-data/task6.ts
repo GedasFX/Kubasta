@@ -5,7 +5,7 @@ import { gameActions } from 'store/game';
 import link from 'assets/tasks/6/Email- Link.png';
 
 const task6data: TaskData = {
-    title: 'Emails',
+    title: 'Suspicious link',
     setting:
         'It is time to read your emails. In your mailbox, there are several emails.',
     instructions:

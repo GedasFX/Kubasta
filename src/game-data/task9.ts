@@ -5,7 +5,7 @@ import { gameActions } from 'store/game';
 import netflixpassword from 'assets/tasks/9/Email- Netflix password.png';
 
 const task9data: TaskData = {
-    title: 'Emails',
+    title: 'Netflix password',
     setting:
         'It is time to read your emails. In your mailbox, there are several emails.',
     instructions:
