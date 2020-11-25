@@ -15,79 +15,90 @@ const task8data: TaskData = {
         moneytransfer: {
             component: fromUrl(moneytransfer),
             buttons:[
-                //reply button
                 {
-                    position:{left:"75.78125%", top:"9.5333333%"},
-                    size: {width:"6.71875%", height:"4.5833333%"},
-                    onClick: ({dispatch}) => {
-                        dispatch(
-                            gameActions.openFeedbackDialog({
-                                text:
-                                    'Do not engage in conversations with a scammer, you may not notice revealing valuable information about yourself.',
-                                next: {
-                                    taskId: 9,
-                                    screenId: 'netflixpassword',
-                                },
-                            })
-                        );
-                        dispatch(gameActions.updatePoints({ points: -5 }));
-                }
-        },
-
-        //report spam button
-        {
-          position: { left: '83.59375%', top: '9.5333333%' },
-          size: { width: '6.71875%', height: '4.5833333%' },
-          onClick: ({ dispatch }) => {
-            dispatch(
-              gameActions.openFeedbackDialog({
-                text:
-                  'Smart! Reporting spam helps your email’s algorithms to recognize suspicious emails as spam.',
-                next: {
-                  taskId: 9,
-                  screenId: 'netflixpassword',
+                  position: { left: '0%', top: '88.88%' },
+                  size: { width: '100%', height: '11.11%' },
+                  onClick: ({ dispatch }) => {
+                    dispatch(
+                      gameActions.openFeedbackDialog({
+                        text:
+                          'Game over! Don’t get tricked by malicious ads. That’s how you actually infect your computer.',
+                        next: {
+                          taskId: 1,
+                          screenId: 'desktopnetworknotconnected',
+                        },
+                      })
+                    );
+                  },
                 },
-              })
-            );
-              dispatch(gameActions.updatePoints({ points: 10 }));
-          },
-        },
-        //close button
-        {
-          position: { left: '91.40625%', top: '9.5333333%' },
-          size: { width: '6.71875%', height: '4.5833333%' },
-          onClick: ({ dispatch }) => {
-            dispatch(
-              gameActions.openFeedbackDialog({
-                text: 'Good! Ignoring suspicious emails is one way to do it.',
-                next: {
-                  taskId: 9,
-                  screenId: 'netflixpassword',
-                },
-              })
-            );
-              dispatch(gameActions.updatePoints({ points: 5 }));
-          },
-        },
-        {
-          position: { left: '0%', top: '88.88%' },
-          size: { width: '100%', height: '11.11%' },
-          onClick: ({ dispatch }) => {
-            dispatch(
-              gameActions.openFeedbackDialog({
-                text:
-                  'Game over! Don’t get tricked by malicious ads. That’s how you actually infect your computer.',
-                next: {
-                  taskId: 1,
-                  screenId: 'desktopnetworknotconnected',
-                },
-              })
-            );
-          },
-        },
       ],
     },
   },
+    buttons:[
+        {
+            text: 'Transfer money',
+            onClick: ({dispatch}) => {
+                dispatch(
+                    gameActions.openFeedbackDialog({
+                        text:
+                            'You should always verify via another communication channel this kind of requests because it may not be your boss sending the email.',
+                        next: {
+                            taskId: 9,
+                            screenId: 'netflixpassword',
+                        },
+                    })
+                );
+                dispatch(gameActions.updatePoints({ points: -10 }));
+            }
+        },
+        {
+            text: 'Reply to verify',
+            onClick: ({dispatch}) => {
+                dispatch(
+                    gameActions.openFeedbackDialog({
+                        text:
+                            'You should choose another communication channel to verify information because this channel might be compromised.',
+                        next: {
+                            taskId: 9,
+                            screenId: 'netflixpassword',
+                        },
+                    })
+                );
+                dispatch(gameActions.updatePoints({ points: -5 }));
+            }
+        },
+        {
+            text: 'Ignore',
+            onClick: ({dispatch}) => {
+                dispatch(
+                    gameActions.openFeedbackDialog({
+                        text: 'It is not a good idea to simply ignore emails from your boss',
+                        next: {
+                            taskId: 9,
+                            screenId: 'netflixpassword',
+                        },
+                    })
+                );
+                dispatch(gameActions.updatePoints({ points: 0 }));
+            }
+        },
+        {
+            text: 'Verify via SMS or call',
+            onClick: ({dispatch}) => {
+                dispatch(
+                    gameActions.openFeedbackDialog({
+                        text:
+                            'Smart! This is the best way to confirm the identify of the sender.',
+                        next: {
+                            taskId: 9,
+                            screenId: 'netflixpassword',
+                        },
+                    })
+                );
+                dispatch(gameActions.updatePoints({ points: 10 }));
+            }
+        }
+    ]
 };
 
 export default task8data;

@@ -24,7 +24,7 @@ const task15data: TaskData = {
             onClick: ({ dispatch, state }) => {
                 dispatch(gameActions.openFeedbackDialog({
                     text: "Incorrect! Inspect the logo and URL again. Nor logo, nor URL match the real NY times.",
-                    next: {screenId: 'camera1', taskId: 18}
+                    next: {screenId: 'mitm', taskId: 16}
                 }));
                 dispatch(gameActions.updatePoints({ points: -5 }));
             },
@@ -34,7 +34,7 @@ const task15data: TaskData = {
             onClick: ({ dispatch, state }) => {
                 dispatch(gameActions.openFeedbackDialog({
                     text:"Correct! You the wrong logo and URL!",
-                    next: {screenId: 'camera1', taskId: 18}
+                    next: {screenId: 'mitm', taskId: 16}
                 }));
                 dispatch(gameActions.updatePoints({ points: 5 }));
             },
