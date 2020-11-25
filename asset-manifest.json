@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Kubasta/static/css/main.3372a6f8.chunk.css",
-    "main.js": "/Kubasta/static/js/main.d8f8dcb8.chunk.js",
-    "main.js.map": "/Kubasta/static/js/main.d8f8dcb8.chunk.js.map",
+    "main.js": "/Kubasta/static/js/main.2d6c58ef.chunk.js",
+    "main.js.map": "/Kubasta/static/js/main.2d6c58ef.chunk.js.map",
     "runtime-main.js": "/Kubasta/static/js/runtime-main.13d037f9.js",
     "runtime-main.js.map": "/Kubasta/static/js/runtime-main.13d037f9.js.map",
     "static/js/2.27ee4f67.chunk.js": "/Kubasta/static/js/2.27ee4f67.chunk.js",
@@ -10,7 +10,12 @@
     "index.html": "/Kubasta/index.html",
     "static/css/main.3372a6f8.chunk.css.map": "/Kubasta/static/css/main.3372a6f8.chunk.css.map",
     "static/js/2.27ee4f67.chunk.js.LICENSE.txt": "/Kubasta/static/js/2.27ee4f67.chunk.js.LICENSE.txt",
+    "static/media/Email- Attachment.e9f8a7bb.png": "/Kubasta/static/media/Email- Attachment.e9f8a7bb.png",
+    "static/media/Email- Blackmail.936ac049.png": "/Kubasta/static/media/Email- Blackmail.936ac049.png",
     "static/media/Email- Emails.bb9c0c2b.png": "/Kubasta/static/media/Email- Emails.bb9c0c2b.png",
+    "static/media/Email- Link.56bb2123.png": "/Kubasta/static/media/Email- Link.56bb2123.png",
+    "static/media/Email- Money transfer.5d21133f.png": "/Kubasta/static/media/Email- Money transfer.5d21133f.png",
+    "static/media/Email- Netflix password.c54ac902.png": "/Kubasta/static/media/Email- Netflix password.c54ac902.png",
     "static/media/antiviruspopup.98332630.png": "/Kubasta/static/media/antiviruspopup.98332630.png",
     "static/media/antivirussettingsoff.0443898b.png": "/Kubasta/static/media/antivirussettingsoff.0443898b.png",
     "static/media/antivirussettingson.52d29d00.png": "/Kubasta/static/media/antivirussettingson.52d29d00.png",
@@ -28,6 +33,6 @@
     "static/js/runtime-main.13d037f9.js",
     "static/js/2.27ee4f67.chunk.js",
     "static/css/main.3372a6f8.chunk.css",
-    "static/js/main.d8f8dcb8.chunk.js"
+    "static/js/main.2d6c58ef.chunk.js"
   ]
 }
