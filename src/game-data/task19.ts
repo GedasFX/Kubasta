@@ -4,7 +4,7 @@ import { gameActions } from 'store/game';
 
 import ransomwaredesktop from 'assets/tasks/14/ransomwaredesktop.png';
 
-const task20data: TaskData = {
+const task19data: TaskData = {
   title: 'Ransomware',
   setting: 'After doing some tasks you notice a popup on the screen.',
   instructions:
