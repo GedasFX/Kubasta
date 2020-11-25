@@ -59,7 +59,15 @@ export default function TabsPanel(props: {
         <VerticalStepper />
       </TabPanel>
       <TabPanel activeTabId={activeTab} tabId={2}>
-        Item Three
+        <Typography>
+          Project done by
+          <ul>
+            <li>Elizabete Liene Šterna 201671IVCM</li>
+            <li>Gediminas Milašius 201678IVCM</li>
+            <li>Marieke Jahn 201684IVCM</li>
+            <li>Olivier Levasseur 201637IVCM</li>
+          </ul>
+        </Typography>
       </TabPanel>
     </>
   );
