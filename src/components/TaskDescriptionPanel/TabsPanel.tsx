@@ -27,7 +27,7 @@ export default function TabsPanel(props: {
   info: { title: string; setting?: string; instructions?: string };
 }) {
   const classes = useStyles();
-  const [activeTab, setActiveTab] = React.useState(0);
+  const [activeTab, setActiveTab] = React.useState(2);
 
   return (
     <>
@@ -59,8 +59,17 @@ export default function TabsPanel(props: {
         <VerticalStepper />
       </TabPanel>
       <TabPanel activeTabId={activeTab} tabId={2}>
-        <Typography>
-          Project done by
+        <Typography variant="h3" gutterBottom>
+          Welcome to GOME
+        </Typography>
+        <Typography variant="body1" gutterBottom>
+          Check out other tabs in the sidebar to see your current assignment.
+        </Typography>
+        <Typography variant="body2" gutterBottom>
+          Cyber awareness training tool for ITC8210HACS, TalTech.
+        </Typography>
+        <Typography variant="caption">
+          Authors:
           <ul>
             <li>Elizabete Liene Šterna 201671IVCM</li>
             <li>Gediminas Milašius 201678IVCM</li>
