@@ -5,33 +5,32 @@ import { gameActions } from 'store/game';
 import moneytransfer from 'assets/tasks/8/Email- Money transfer.png';
 
 const task8data: TaskData = {
-  title: 'Emails',
-  setting:
-    'It is time to read your emails. In your mailbox, there are several emails.',
-  instructions: 'Investigate them and decide on your course of action.',
-  description: 'Investigate them and decide on your course of action.',
-  screens: {
-    moneytransfer: {
-      component: fromUrl(moneytransfer),
-      buttons: [
-        //reply button
-        {
-          position: { left: '75.78125%', top: '9.5333333%' },
-          size: { width: '6.71875%', height: '4.5833333%' },
-          onClick: ({ dispatch }) => {
-            dispatch(
-              gameActions.openFeedbackDialog({
-                text:
-                  'Do not engage in conversations with a scammer, you may not notice revealing valuable information about yourself.',
-                next: {
-                  taskId: 9,
-                  screenId: 'netflixpassword',
-                },
-              })
-            );
-            dispatch(gameActions.updatePoints({ points: -5 }));
-          },
+    title: 'Money transfer',
+    setting:
+        'It is time to read your emails. In your mailbox, there are several emails.',
+    instructions:
+        'Investigate them and decide on your course of action.',
+    description: 'Investigate them and decide on your course of action.',
+    screens: {
+        moneytransfer: {
+            component: fromUrl(moneytransfer),
+            buttons:[
+                //reply button
+                {
+                    position:{left:"75.78125%", top:"9.5333333%"},
+                    size: {width:"6.71875%", height:"4.5833333%"},
+                    onClick: ({dispatch}) => {
+                        gameActions.openFeedbackDialog({
+                            text:
+                                'Do not engage in conversations with a scammer, you may not notice revealing valuable information about yourself.',
+                            next: {
+                                taskId: 9,
+                                screenId: 'netflixpassword',
+                            },
+                    });
+                }
         },
+
         //report spam button
         {
           position: { left: '83.59375%', top: '9.5333333%' },
