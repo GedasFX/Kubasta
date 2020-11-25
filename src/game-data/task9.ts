@@ -39,8 +39,8 @@ const task9data: TaskData = {
                 text:
                   'Smart! Reporting spam helps your email’s algorithms to recognize suspicious emails as spam.',
                 next: {
-                  taskId: 1,
-                  screenId: 'desktopnetworknotconnected',
+                  taskId: 10,
+                  screenId: 'facebook',
                 },
               })
             );
@@ -56,8 +56,8 @@ const task9data: TaskData = {
               gameActions.openFeedbackDialog({
                 text: 'Good! Ignoring suspicious emails is one way to do it.',
                 next: {
-                  taskId: 1,
-                  screenId: 'desktopnetworknotconnected',
+                  taskId: 10,
+                  screenId: 'facebook',
                 },
               })
             );

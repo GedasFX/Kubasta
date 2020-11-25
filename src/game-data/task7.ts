@@ -20,14 +20,17 @@ const task7data: TaskData = {
                     position: {left: "75.78125%", top: "9.5333333%"},
                     size: {width: "6.71875%", height: "4.5833333%"},
                     onClick: ({dispatch}) => {
-                        gameActions.openFeedbackDialog({
-                            text:
-                                'Do not engage in conversations with a scammer, you may not notice revealing valuable information about yourself.',
-                            next: {
-                                taskId: 8,
-                                screenId: 'moneytransfer',
-                            },
-                        });
+                        dispatch(
+                            gameActions.openFeedbackDialog({
+                                text:
+                                    'Do not engage in conversations with a scammer, you may not notice revealing valuable information about yourself.',
+                                next: {
+                                    taskId: 8,
+                                    screenId: 'moneytransfer',
+                                },
+                            })
+                        );
+                        dispatch(gameActions.updatePoints({ points: -5 }));
                     }
                 },
         //report spam button
