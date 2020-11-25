@@ -6,10 +6,8 @@ import changepassword from 'assets/tasks/3/changepassword.png';
 
 const task1data: TaskData = {
   title: 'Choose a safe password.',
-  setting:
-    'It has been 6 months since you have changed your password.',
-  instructions:
-    'Choose a safe password.',
+  setting: 'It has been 6 months since you have changed your password.',
+  instructions: 'Choose a safe password.',
   description: 'Choose a safe password.',
   screens: {
     changepassword: {
@@ -18,7 +16,7 @@ const task1data: TaskData = {
         {
           position: { left: '92%', top: '94.5%' },
           size: { width: '2%', height: '4%' },
-          onClick: (dispatch) => {
+          onClick: ({ dispatch }) => {
             // dispatch(
             //   gameActions.setActiveScreenId({ id: 'availablenetworks' })
             // );
@@ -27,19 +25,15 @@ const task1data: TaskData = {
         {
           position: { left: '7.28%', top: '71.87%' },
           size: { width: '15.75%', height: '10.17%' },
-          onClick: (dispatch) => {
-            dispatch(
-              gameActions.task3Feedback({ twoFactorSelected:true })
-            );
+          onClick: ({ dispatch }) => {
+            dispatch(gameActions.task3Feedback({ twoFactorSelected: true }));
           },
         },
         {
           position: { left: '48.63%', top: '71.87%' },
           size: { width: '32.02%', height: '10.17%' },
-          onClick: (dispatch) => {
-            dispatch(
-              gameActions.task3Feedback({twoFactorSelected:false})
-            );
+          onClick: ({ dispatch }) => {
+            dispatch(gameActions.task3Feedback({ twoFactorSelected: false }));
           },
         },
       ],
@@ -53,10 +47,10 @@ const task1data: TaskData = {
           position: { left: '5.99%', top: '56.21%' },
           size: { height: '5.84%', width: '74.83%' },
           type: 'password',
-          onChange: ((newValue:string, dispatch) => {
+          onChange: (newValue: string, { dispatch }) => {
             console.log('new input value: ' + newValue);
-            dispatch(gameActions.setUserInput({userInput:newValue}));
-          })
+            dispatch(gameActions.setUserInput({ userInput: newValue }));
+          },
         },
       ],
     },

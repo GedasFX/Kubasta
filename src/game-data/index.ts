@@ -1,4 +1,6 @@
 import { AppDispatch } from '../store';
+import gameReducer from 'store/game';
+
 import task1data from './task1';
 import task2data from './task2';
 import task3data from './task3';
@@ -22,15 +24,20 @@ export type ScreenElement<T> = {
   size: { width: number | string; height: number | string };
 } & T;
 
+export type ActionProps = {
+  dispatch: AppDispatch;
+  state: ReturnType<typeof gameReducer>;
+};
+
 export interface ScreenData {
   component: React.ReactNode;
   buttons?: ScreenElement<{
-    onClick?: (dispatch: AppDispatch) => void;
+    onClick?: (props: ActionProps) => void;
   }>[];
   textFields?: ScreenElement<{
     placeholder?: string;
     type?: string;
-    onChange?:(newValue:string, dispatch: AppDispatch) => void;
+    onChange?: (value: string, props: ActionProps) => void;
   }>[];
 }
 
@@ -43,7 +50,7 @@ const gameTasks: { [taskId: string]: TaskData } = {
   6: task6data,
   7: task7data,
   8: task8data,
-  9: task9data
+  9: task9data,
 };
 export default gameTasks;
 export const POINTS_WRONG_ANSWER = -30;

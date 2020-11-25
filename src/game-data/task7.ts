@@ -26,41 +26,65 @@ const task7data: TaskData = {
                         dispatch(gameActions.toggleFeedbackDialog());
                     }
                 },
-                //report spam button
-                {
-                    position:{left:"83.59375%", top:"9.5333333%"},
-                    size: {width:"6.71875%", height:"4.5833333%"},
-                    onClick: (dispatch) => {
-                        dispatch(gameActions.setFeedbackDialogText({text:"Smart! Reporting spam helps your email’s algorithms to recognize suspicious emails as spam."}));
-                        dispatch(gameActions.updatePoints({points:10}));
-                        dispatch(gameActions.setNextTaskAndScreen({nextScreenId:'moneytransfer', nextTaskId:8}));
-                        dispatch(gameActions.toggleFeedbackDialog());
-                    }
-                },
-                //close button
-                {
-                    position:{left:"91.40625%", top:"9.5333333%"},
-                    size: {width:"6.71875%", height:"4.5833333%"},
-                    onClick: (dispatch) => {
-                        dispatch(gameActions.setFeedbackDialogText({text:"Good! Ignoring suspicious emails is one way to do it."}));
-                        dispatch(gameActions.updatePoints({points:5}));
-                        dispatch(gameActions.setNextTaskAndScreen({nextScreenId:'moneytransfer', nextTaskId:8}));
-                        dispatch(gameActions.toggleFeedbackDialog());
-                    }
-                },
-                {
-                    position:{left:"0%", top:"88.88%"},
-                    size: {width: "100%", height: "11.11%"},
-                    onClick:(dispatch) => {
-                        dispatch(gameActions.setFeedbackDialogText({text:"Game over! Don’t get tricked by malicious ads. That’s how you actually infect your computer."}));
-                        dispatch(gameActions.initializePoints());
-                        dispatch(gameActions.setNextTaskAndScreen({nextScreenId:'desktopnetworknotconnected', nextTaskId:1}));
-                        dispatch(gameActions.toggleFeedbackDialog());
-                    }
-                }
-            ]
+              })
+            );
+            dispatch(gameActions.updatePoints({ points: -5 }));
+          },
         },
+        //report spam button
+        {
+          position: { left: '83.59375%', top: '9.5333333%' },
+          size: { width: '6.71875%', height: '4.5833333%' },
+          onClick: ({ dispatch }) => {
+            dispatch(
+              gameActions.openFeedbackDialog({
+                text:
+                  'Smart! Reporting spam helps your email’s algorithms to recognize suspicious emails as spam.',
+                next: {
+                  taskId: 8,
+                  screenId: 'moneytransfer',
+                },
+              })
+            );
+            dispatch(gameActions.updatePoints({ points: 10 }));
+          },
+        },
+        //close button
+        {
+          position: { left: '91.40625%', top: '9.5333333%' },
+          size: { width: '6.71875%', height: '4.5833333%' },
+          onClick: ({ dispatch }) => {
+            dispatch(
+              gameActions.openFeedbackDialog({
+                text: 'Good! Ignoring suspicious emails is one way to do it.',
+                next: {
+                  taskId: 8,
+                  screenId: 'moneytransfer',
+                },
+              })
+            );
+            dispatch(gameActions.updatePoints({ points: 5 }));
+          },
+        },
+        {
+          position: { left: '0%', top: '88.88%' },
+          size: { width: '100%', height: '11.11%' },
+          onClick: ({ dispatch }) => {
+            dispatch(
+              gameActions.openFeedbackDialog({
+                text:
+                  'Game over! Don’t get tricked by malicious ads. That’s how you actually infect your computer.',
+                next: {
+                  taskId: 1,
+                  screenId: 'desktopnetworknotconnected',
+                },
+              })
+            );
+          },
+        },
+      ],
     },
+  },
 };
 
 export default task7data;

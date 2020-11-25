@@ -24,28 +24,14 @@ export default function QuizGame() {
   const dispatch = useDispatch();
   const gameState = useSelector((state: AppState) => state.game);
   const [screenData, setScreenData] = useState(
-      undefined as ScreenData | undefined
+    undefined as ScreenData | undefined
   );
 
   useEffect(() => {
-    dispatch(gameActions.initializeFeedbackDialog())
     dispatch(gameActions.setActiveTaskId({ id: 1 }));
     dispatch(
-        gameActions.setActiveScreenId({ id: 'desktopnetworknotconnected' })
+      gameActions.setActiveScreenId({ id: 'desktopnetworknotconnected' })
     );
-
-
-    // dispatch(gameActions.setActiveTaskId({ id: 2 }));
-    // dispatch(
-    //     gameActions.setActiveScreenId({ id: 'antiviruspopup' })
-    // );
-
-    //dispatch(gameActions.setActiveTaskId({ id: 3 }));
-    //dispatch(
-    //    gameActions.setActiveScreenId({ id: 'changepassword' })
-    //);
-    dispatch(gameActions.initializePoints());
-    dispatch(gameActions.setUserInput({userInput:''}));
   }, [dispatch]);
 
   useEffect(() => {
@@ -67,8 +53,7 @@ export default function QuizGame() {
       </Grid>
       <Grid item xs={12} className={classes.imgContainer}>
         <ActionableImage {...screenData} />
-              <FeedbackDialog
-        />
+        <FeedbackDialog />
       </Grid>
     </Grid>
   );
