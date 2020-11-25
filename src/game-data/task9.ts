@@ -7,9 +7,9 @@ import netflixpassword from 'assets/tasks/9/Email- Netflix password.png';
 const task9data: TaskData = {
   title: 'Netflix password',
   setting:
-    'It is time to read your emails. In your mailbox, there are several emails.',
-  instructions: 'Investigate them and decide on your course of action.',
-  description: 'Investigate them and decide on your course of action.',
+    'It appears your friend Rachel has sent you an email. That silly goose has forgotten the Netflix password yet again. What are you going to do about it?',
+  instructions:
+    'Select one of the options in the sidebar, regarding your actions.',
   screens: {
     netflixpassword: {
       component: fromUrl(netflixpassword),

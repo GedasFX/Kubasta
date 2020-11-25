@@ -26,17 +26,17 @@ export default function GameOverDialog() {
   const [showDialog, setShowDialog] = useState(false);
 
   useEffect(() => {
-    if (
+    setShowDialog(
       gameState.activeTaskId === '0' &&
-      gameState.activeScreenId === 'gameover' &&
-      gameState.gameOver
-    ) {
-      setShowDialog(true);
-    }
+        gameState.activeScreenId === 'gameover' &&
+        gameState.gameOver
+    );
   }, [gameState.activeScreenId, gameState.activeTaskId, gameState.gameOver]);
 
   const onConfirmation = function () {
     dispatch(gameActions.gameOver(false));
+    dispatch(gameActions.setActiveScreenId({ id: 'welcome' }));
+    dispatch(gameActions.resetPoints());
   };
 
   return (
@@ -52,7 +52,7 @@ export default function GameOverDialog() {
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={onConfirmation}>
-            {gameState.feedbackButtonText ?? 'OK'}
+            {gameState.feedbackButtonText ?? 'Try again'}
           </Button>
         </DialogActions>
       </Dialog>

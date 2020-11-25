@@ -27,7 +27,6 @@ export interface TaskData {
   title: string;
   setting?: string;
   instructions?: string;
-  description: string;
   screens: { [key: string]: ScreenData };
   buttons?: { text: string; onClick?: (props: ActionProps) => void }[];
 }

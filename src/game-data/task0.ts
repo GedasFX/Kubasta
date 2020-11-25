@@ -9,7 +9,6 @@ const task0data: TaskData = {
   title: 'Welcome!',
   instructions:
     'Feel free to click around the environment. Click the button on the desktop when you wish to begin.',
-  description: 'Welcome!',
   screens: {
     welcome: {
       component: fromUrl(welcome),

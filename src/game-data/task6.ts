@@ -6,10 +6,9 @@ import link from 'assets/tasks/6/Email- Link.png';
 
 const task6data: TaskData = {
   title: 'Suspicious link',
-  setting:
-    'It is time to read your emails. In your mailbox, there are several emails.',
-  instructions: 'Investigate them and decide on your course of action.',
-  description: 'Investigate them and decide on your course of action.',
+  setting: 'This email appears to be from an unknown sender as well.',
+  instructions:
+    'Chose what action you should perform for this email (reply, report spam, close, or click on the link).',
   screens: {
     link: {
       component: fromUrl(link),

@@ -5,10 +5,9 @@ import { gameActions } from 'store/game';
 import facebouk from 'assets/tasks/10/Websites-Facebouk.png';
 
 const task10data: TaskData = {
-  title: 'Facebook',
-  description: 'You have to determine whether a website is secure or not.',
-  instructions: '',
-  setting: 'You have to determine whether a website is secure or not.',
+  title: 'Phishing - Facebook',
+  instructions: 'Determine if this website is safe or not.',
+  setting: 'After reading emails you have decided to visit social media.',
   screens: {
     facebook: {
       component: fromUrl(facebouk),

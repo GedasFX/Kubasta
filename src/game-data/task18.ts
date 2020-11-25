@@ -6,11 +6,10 @@ import camera1 from 'assets/tasks/18/Websites-Camera 1.png';
 import camera2 from 'assets/tasks/18/Websites- Camera 2.png';
 
 const task18data: TaskData = {
-  title: 'Camera',
-  setting: 'You are browsing trough cute dog pics',
-  instructions:
-    'This random website is asking permission to use your camera. What will you do?',
-  description: 'Website requests camera.',
+  title: 'Permissions - Camera',
+  setting:
+    'You are browsing trough cute dog pics, and the website randomly asks you to allow your camera. What should you do?',
+  instructions: 'Chose an option from the popup window.',
   screens: {
     camera1: {
       component: fromUrl(camera1),

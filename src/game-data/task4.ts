@@ -8,8 +8,8 @@ const task4data: TaskData = {
   title: 'Emails',
   setting:
     'It is time to read your emails. In your mailbox, there are several emails.',
-  instructions: 'Investigate them and decide on your course of action.',
-  description: 'Investigate them and decide on your course of action.',
+  instructions:
+    'To complete this task, you should open up the first email and then decide what you should do with it.',
   screens: {
     emails: {
       component: fromUrl(emails),

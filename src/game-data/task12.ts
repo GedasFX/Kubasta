@@ -6,10 +6,10 @@ import { gameActions } from 'store/game';
 import amazon from 'assets/tasks/10/Websites-Amazon2.png';
 
 const task12data: TaskData = {
-  title: 'Amazon',
-  description: 'You have to determine whether a website is secure or not.',
-  instructions: '',
-  setting: 'You have to determine whether a website is secure or not.',
+  title: 'Phishing - Amazon',
+  instructions: 'Determine if this website is safe or not.',
+  setting:
+    'You were notified that one of your friends birthday was coming up so you go to Amazon to buy them a gift.',
   screens: {
     amazon: {
       component: fromUrl(amazon),

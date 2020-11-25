@@ -6,10 +6,9 @@ import { gameActions } from 'store/game';
 import washingtonpost from 'assets/tasks/10/Websites-Washington post.png';
 
 const task13data: TaskData = {
-  title: 'Washington Post',
-  description: 'You have to determine whether a website is secure or not.',
-  instructions: '',
-  setting: 'You have to determine whether a website is secure or not.',
+  title: 'Phishing - Washington Post',
+  instructions: 'Determine if this website is safe or not.',
+  setting: 'After visiting social media, you decide to look at some news.',
   screens: {
     washingtonpost: {
       component: fromUrl(washingtonpost),

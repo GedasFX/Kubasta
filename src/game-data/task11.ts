@@ -5,10 +5,10 @@ import { gameActions } from 'store/game';
 import washingtonedu from 'assets/tasks/10/Websites-washington.edu2.png';
 
 const task11data: TaskData = {
-  title: 'Washington edu',
-  description: 'You have to determine whether a website is secure or not.',
-  instructions: 'You have to determine whether a website is secure or not.',
-  setting: '',
+  title: 'Phishing - University of Washington',
+  instructions: 'Determine if this website is safe or not.',
+  setting:
+    'One of your friends mentioned that they were going to the University of Washington, so you decided to check it out.',
   screens: {
     washingtonedu: {
       component: fromUrl(washingtonedu),

@@ -3,7 +3,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 const slice = createSlice({
   name: 'game',
   initialState: {
-    points: 150,
+    points: 100,
 
     activeTaskId: '0',
     activeScreenId: 'welcome',
@@ -80,6 +80,9 @@ const slice = createSlice({
       } else {
         state.gameOver = true;
       }
+    },
+    resetPoints: (state) => {
+      state.points = 100;
     },
   },
 });

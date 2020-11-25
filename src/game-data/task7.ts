@@ -8,8 +8,7 @@ const task7data: TaskData = {
   title: 'Blackmail',
   setting:
     'Someone you don’t know appears to be blackmailing you. What should you do?',
-  instructions: 'Decide on your course of action.',
-  description: 'Investigate them and decide on your course of action.',
+  instructions: 'Click on any of the buttons on the sidebar.',
   screens: {
     blackmail: {
       component: fromUrl(blackmail),

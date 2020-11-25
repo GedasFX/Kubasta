@@ -7,8 +7,8 @@ import attachment from 'assets/tasks/5/Email- Attachment.png';
 const task5data: TaskData = {
   title: 'Malicious email attachment',
   setting: 'This email appears to be from an unknown sender.',
-  instructions: 'Investigate and decide on your course of action.',
-  description: 'Investigate and decide on your course of action.',
+  instructions:
+    'Chose what action you should perform for this email (reply, report spam, close, or download attachment).',
   screens: {
     attachment: {
       component: fromUrl(attachment),

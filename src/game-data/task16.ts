@@ -7,12 +7,11 @@ import mitm from 'assets/tasks/11/Websites-MitM(2).png';
 import mitm2 from 'assets/tasks/11/Websites-MitM.png';
 
 const task16data: TaskData = {
-  title: 'SSL MITM',
-  description:
-    'You followed a link from an ad and this warning showed up. Take appropriate actions.',
-  instructions: 'Take appropriate actions.',
+  title: 'HTTPS errors',
+  instructions:
+    'Decide what button you should press on the website to get out of this mess.',
   setting:
-    'You followed a link from an ad and this warning showed up. Take appropriate actions.',
+    'You followed a link in the news site from an ad and this warning showed up. What should you do?',
   screens: {
     mitm: {
       component: fromUrl(mitm),

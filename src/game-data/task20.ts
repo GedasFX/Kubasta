@@ -7,10 +7,9 @@ import desktoppopup from 'assets/tasks/20/task16desktoppluspopupnew.png';
 const task20data: TaskData = {
   title: 'Locked computer',
   setting:
-    'You see your friend entering the shop – seems like you did not have time to get much done after all, but at least you are set up for next time!',
+    'You see your friend finally enter the shop – seems like you did not have time to get much done after all, but at least you are set up for next time!',
   instructions:
-    "Now all that is left to do is to lock your computer. Do you know the shortcut? Note: type 'win' for windows key.",
-  description: 'Can you lock the computer?',
+    "Now all that is left to do is to lock your computer. Do you know the shortcut? Hint: type 'win' for windows key.",
   screens: {
     main: {
       component: fromUrl(desktoppopup),

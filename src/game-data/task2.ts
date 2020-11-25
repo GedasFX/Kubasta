@@ -5,10 +5,9 @@ import antivirussettingsoff from '../assets/tasks/2/antivirussettingsoff.png';
 import antivirussettingson from '../assets/tasks/2/antivirussettingson.png';
 import { gameActions } from 'store/game';
 const task2data: TaskData = {
-  title: 'Antivirus',
+  title: 'Antivirus is offline',
   setting: 'A popup appeared saying virus protection is off, how curious...',
   instructions: 'To complete this task you should enable the antivirus',
-  description: 'Deal appropriately with default antivirus.',
   screens: {
     antiviruspopup: {
       component: fromUrl(antiviruspopup),

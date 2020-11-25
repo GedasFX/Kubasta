@@ -2,9 +2,7 @@ import React, { useEffect } from 'react';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
-import StepContent from '@material-ui/core/StepContent';
 import gameItems from 'game-data';
-import Typography from '@material-ui/core/Typography';
 import { useSelector } from 'react-redux';
 import { AppState } from '../store';
 import PerfectScrollbar from 'react-perfect-scrollbar';
@@ -12,10 +10,6 @@ import PerfectScrollbar from 'react-perfect-scrollbar';
 function getSteps() {
   const keys = Object.keys(gameItems);
   return keys.map((x) => gameItems[x].title);
-}
-
-function getStepContent(step: number) {
-  return gameItems[step + 1] ? gameItems[step + 1].description : '';
 }
 
 export default function VerticalStepper() {
@@ -36,11 +30,8 @@ export default function VerticalStepper() {
       <PerfectScrollbar>
         <Stepper activeStep={activeStep} orientation="vertical">
           {steps.map((label, index) => (
-            <Step key={label}>
+            <Step key={index}>
               <StepLabel>{label}</StepLabel>
-              <StepContent>
-                <Typography>{getStepContent(index)}</Typography>
-              </StepContent>
             </Step>
           ))}
         </Stepper>

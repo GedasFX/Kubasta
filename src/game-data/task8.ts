@@ -6,10 +6,8 @@ import moneytransfer from 'assets/tasks/8/Email- Money transfer.png';
 
 const task8data: TaskData = {
   title: 'Money transfer',
-  setting:
-    'It is time to read your emails. In your mailbox, there are several emails.',
-  instructions: 'Investigate them and decide on your course of action.',
-  description: 'Investigate them and decide on your course of action.',
+  setting: 'Again an email from an unknown source. Who is sending them?',
+  instructions: 'Chose what are you going to do with this email.',
   screens: {
     moneytransfer: {
       component: fromUrl(moneytransfer),
@@ -94,7 +92,7 @@ const task8data: TaskData = {
         dispatch(
           gameActions.openFeedbackDialog({
             title: 'Smart choice!',
-            text: 'This is the best way to confirm the identify of the sender.',
+            text: 'This is the best way to confirm the identity of the sender.',
             next: {
               taskId: 9,
               screenId: 'netflixpassword',

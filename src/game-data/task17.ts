@@ -9,10 +9,9 @@ const nextScreenId = 'camera1';
 const task17data: TaskData = {
   title: 'Movies',
   setting:
-    'You have a date and you are about to chill but protection comes first. Choose a safe option for watching a movie in the recent links.',
-  description:
-    'You have a date and you are about to chill but protection comes first. Choose a safe option for watching a movie.',
-  instructions: 'Choose a safe option for watching a movie.',
+    'You have an upcoming date with a friend and are preparing to chill, but remember that protection comes first.',
+  instructions:
+    'Choose a safe website for watching a movie in the recent links.',
   screens: {
     movies: {
       component: fromUrl(movies),

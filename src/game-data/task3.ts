@@ -8,7 +8,6 @@ const task1data: TaskData = {
   title: 'Choose a safe password',
   setting: 'It has been 6 months since you have changed your password.',
   instructions: 'To complete this task, you should create a safe password.',
-  description: 'Choose a safe password.',
   screens: {
     changepassword: {
       component: fromUrl(changepassword),

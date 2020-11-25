@@ -6,10 +6,10 @@ import ransomwaredesktop from 'assets/tasks/19/ransomwaredesktop.png';
 
 const task19data: TaskData = {
   title: 'Ransomware',
-  setting: 'After doing some tasks you notice a popup on the screen.',
+  setting:
+    'After doing some tasks you notice a popup show up on the screen. Have you been somewhere where you should not have been?',
   instructions:
     'Look at the ransomware alert and choose the best action in this situation.',
-  description: 'Ransomware attack has occurred.',
   screens: {
     ransomware: {
       component: fromUrl(ransomwaredesktop),

@@ -6,10 +6,10 @@ import { gameActions } from 'store/game';
 import seb from 'assets/tasks/10/Websites-SEB.png';
 
 const task14data: TaskData = {
-  title: 'SEB bank',
-  description: 'You have to determine whether a website is secure or not.',
-  instructions: '',
-  setting: 'You have to determine whether a website is secure or not.',
+  title: 'Phishing - SEB bank',
+  instructions: 'Determine if this website is safe or not.',
+  setting:
+    'For some abridged reason, you decide to take a look at your bank account.',
   screens: {
     seb: {
       component: fromUrl(seb),
