@@ -19,18 +19,18 @@ const task8data: TaskData = {
                 {
                     position:{left:"75.78125%", top:"9.5333333%"},
                     size: {width:"6.71875%", height:"4.5833333%"},
-                    onClick: (dispatch) => {
-                        dispatch(gameActions.setFeedbackDialogText({text:"Do not engage in conversations with a scammer, you may not notice revealing valuable information about yourself."}));
-                        dispatch(gameActions.updatePoints({points:-5}));
-                        dispatch(gameActions.setNextTaskAndScreen({nextScreenId:'netflixpassword', nextTaskId:9}));
-                        dispatch(gameActions.toggleFeedbackDialog());
-                    }
-                },
-              })
-            );
-            dispatch(gameActions.updatePoints({ points: -5 }));
-          },
+                    onClick: ({dispatch}) => {
+                        gameActions.openFeedbackDialog({
+                            text:
+                                'Do not engage in conversations with a scammer, you may not notice revealing valuable information about yourself.',
+                            next: {
+                                taskId: 9,
+                                screenId: 'netflixpassword',
+                            },
+                    });
+                }
         },
+
         //report spam button
         {
           position: { left: '83.59375%', top: '9.5333333%' },

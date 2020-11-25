@@ -19,18 +19,18 @@ const task6data: TaskData = {
                 {
                     position:{left:"75.78125%", top:"9.5333333%"},
                     size: {width:"6.71875%", height:"4.5833333%"},
-                    onClick: (dispatch) => {
-                        dispatch(gameActions.setFeedbackDialogText({text:"Do not engage in conversations with a scammer, you may not notice revealing valuable information about yourself."}));
-                        dispatch(gameActions.updatePoints({points:-5}));
-                        dispatch(gameActions.setNextTaskAndScreen({nextScreenId:'blackmail', nextTaskId:7}));
-                        dispatch(gameActions.toggleFeedbackDialog());
+                    onClick: ({dispatch}) => {
+                        dispatch(gameActions.openFeedbackDialog({
+                            text:
+                                'Do not engage in conversations with a scammer, you may not notice revealing valuable information about yourself.',
+                            next: {
+                                taskId: 7,
+                                screenId: 'blackmail',
+                            }
+
+                        }));
                     }
                 },
-              })
-            );
-            dispatch(gameActions.updatePoints({ points: -5 }));
-          },
-        },
         //report spam button
         {
           position: { left: '83.59375%', top: '9.5333333%' },
