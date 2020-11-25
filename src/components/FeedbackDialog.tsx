@@ -2,8 +2,7 @@ import React from 'react';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import { AppDispatch, AppState } from '../store';
+import { AppState } from '../store';
 import { useDispatch, useSelector } from 'react-redux';
 import { gameActions } from '../store/game';
 import {
@@ -32,7 +31,7 @@ export default function FeedbackDialog() {
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={onConfirmation}>
-            OK
+            {gameState.feedbackButtonText ?? 'OK'}
           </Button>
         </DialogActions>
       </Dialog>

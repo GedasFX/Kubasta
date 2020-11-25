@@ -2,7 +2,8 @@ import { TaskData } from '.';
 import { fromUrl } from '../components/AppImage';
 import { gameActions } from 'store/game';
 
-import welcome from 'assets/tasks/1/welcome_screen.png';
+import welcome from 'assets/tasks/0/welcome_screen.png';
+import gameover from 'assets/tasks/0/lockscreen.png';
 
 const task0data: TaskData = {
   title: 'Welcome!',
@@ -30,6 +31,9 @@ const task0data: TaskData = {
           },
         },
       ],
+    },
+    gameover: {
+      component: fromUrl(gameover),
     },
   },
 };

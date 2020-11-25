@@ -35,16 +35,17 @@ const task19data: TaskData = {
         {
           position: { top: '57.49%', left: '25.05%' },
           size: { height: '14.42%', width: '48.56%' },
-          onClick: ({ dispatch }) => {
-            dispatch(gameActions.updatePoints({ points: -10 }));
+          onClick: ({ dispatch, state }) => {
+            dispatch(gameActions.gameOver());
+            dispatch(gameActions.updatePoints({ points: -state.points }));
             dispatch(
               gameActions.openFeedbackDialog({
                 title: 'What?!',
                 text:
                   'Do you just click any link you see? The first step would be to check if your files are corrupted, and even then, clicking a link is most likely what the attacker wants you to do. How can you trust the word of someone who encrypted your files in the first place?',
                 next: {
-                  taskId: 1,
-                  screenId: 'desktopnetworknotconnected',
+                  taskId: '0',
+                  screenId: 'gameover',
                 },
               })
             );

@@ -41,15 +41,17 @@ const task4data: TaskData = {
         {
           position: { left: '0%', top: '88.88%' },
           size: { width: '100%', height: '11.11%' },
-          onClick: ({ dispatch }) => {
+          onClick: ({ dispatch, state }) => {
+            dispatch(gameActions.gameOver());
+            dispatch(gameActions.updatePoints({ points: -state.points }));
             dispatch(
               gameActions.openFeedbackDialog({
                 title: 'Game over!',
                 text:
                   'Never ever get tricked by malicious ads. That’s how you actually infect your computer.',
                 next: {
-                  taskId: 1,
-                  screenId: 'desktopnetworknotconnected',
+                  taskId: '0',
+                  screenId: 'gameover',
                 },
               })
             );

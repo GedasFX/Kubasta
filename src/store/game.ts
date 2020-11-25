@@ -1,8 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-const firstScreenId = 'desktopnetworknotconnected';
-const firstTaskId = 1;
-
 const slice = createSlice({
   name: 'game',
   initialState: {
@@ -15,6 +12,8 @@ const slice = createSlice({
     feedbackText: '',
     feedbackTitle: '',
 
+    gameOver: false,
+
     userInput: {},
   } as {
     activeTaskId: string | number;
@@ -25,8 +24,11 @@ const slice = createSlice({
     showFeedbackDialog: boolean;
     feedbackText: string;
     feedbackTitle: string;
+    feedbackButtonText?: string;
     nextTaskId: string | number;
     nextScreenId: string | number;
+
+    gameOver: boolean;
 
     userInput: { [name: string]: string };
   },
@@ -66,15 +68,18 @@ const slice = createSlice({
     updatePoints: (state, { payload }: PayloadAction<{ points: number }>) => {
       state.points = state.points + payload.points;
     },
-    gameOver: (state) => {
-      state.activeTaskId = firstTaskId;
-      state.activeScreenId = firstScreenId;
-    },
     setUserInput: (
       state,
       { payload }: PayloadAction<{ key: string; value: string }>
     ) => {
       state.userInput[payload.key] = payload.value;
+    },
+    gameOver: (state, { payload }: PayloadAction<boolean | undefined>) => {
+      if (typeof payload === 'boolean') {
+        state.gameOver = payload;
+      } else {
+        state.gameOver = true;
+      }
     },
   },
 });

@@ -3,11 +3,11 @@ import { makeStyles } from '@material-ui/core/styles';
 import React, { useEffect, useState } from 'react';
 import ActionableImage from '../../components/ActionableImage';
 import { AppState } from '../../store';
-import { useSelector, useDispatch } from 'react-redux';
-import { gameActions } from '../../store/game';
+import { useSelector } from 'react-redux';
 import gameItems, { ScreenData } from '../../game-data';
 import FeedbackDialog from '../../components/FeedbackDialog';
 import CustomizedProgressBar from '../../components/ProgressBar';
+import GameOverDialog from 'components/GameOverDialog';
 
 const useStyles = makeStyles((theme) => ({
   imgContainer: {
@@ -46,6 +46,7 @@ export default function QuizGame() {
       <Grid item xs={12} className={classes.imgContainer}>
         <ActionableImage {...screenData} />
         <FeedbackDialog />
+        <GameOverDialog />
       </Grid>
     </Grid>
   );

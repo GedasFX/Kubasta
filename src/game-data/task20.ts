@@ -42,20 +42,30 @@ const task20data: TaskData = {
 
             if (inputs.includes('win') && inputs.includes('l')) {
               dispatch(gameActions.updatePoints({ points: 10 }));
+              dispatch(gameActions.gameOver());
               dispatch(
                 gameActions.openFeedbackDialog({
                   title: 'Great job!',
                   text:
                     'Locking your computer is a great skill to have and use! Always be sure to do so in case you are leaving your PC unattended. With this shortcut it only takes a second to keep your data private, as it should be.',
+                  next: {
+                    taskId: '0',
+                    screenId: 'gameover',
+                  },
                 })
               );
             } else {
               dispatch(gameActions.updatePoints({ points: -10 }));
+              dispatch(gameActions.gameOver());
               dispatch(
                 gameActions.openFeedbackDialog({
                   title: 'You should learn this',
                   text:
                     'Locking your computer is a great skill to have and use! Always be sure to do so in case you are leaving your PC unattended. The shortcut to do this is to press Win + L. Memorize it! It only takes a second to keep your data private, as all things should be.',
+                  next: {
+                    taskId: '0',
+                    screenId: 'gameover',
+                  },
                 })
               );
             }
