@@ -13,6 +13,8 @@ const slice = createSlice({
 
     showFeedbackDialog: false,
     feedbackText: '',
+
+    userInput: {},
   } as {
     activeTaskId: string | number;
     activeScreenId: string | number;
@@ -24,7 +26,7 @@ const slice = createSlice({
     nextTaskId: string | number;
     nextScreenId: string | number;
 
-    userInput: string;
+    userInput: { [name: string]: string };
   },
   reducers: {
     setActiveTaskId: (
@@ -64,42 +66,11 @@ const slice = createSlice({
       state.activeTaskId = firstTaskId;
       state.activeScreenId = firstScreenId;
     },
-    // setNextTaskAndScreen: (
-    //   state,
-    //   { payload }: PayloadAction<{ nextTaskId: number; nextScreenId: string }>
-    // ) => {
-    //   state.nextTaskId = payload.nextTaskId;
-    //   state.nextScreenId = payload.nextScreenId;
-    // },
     setUserInput: (
       state,
-      { payload }: PayloadAction<{ userInput: string }>
+      { payload }: PayloadAction<{ key: string; value: string }>
     ) => {
-      state.userInput = payload.userInput;
-    },
-    task3Feedback: (
-      state,
-      { payload }: PayloadAction<{ twoFactorSelected: boolean }>
-    ) => {
-      if (payload.twoFactorSelected) {
-        state.points += 10;
-        state.feedbackText =
-          'You did not care to turn on Two-Factor-Verification (2FV)? Attackers will have access to your account in no time.';
-      } else {
-        state.feedbackText =
-          'Good job for turning on Two-Factor-Verification (2FV).';
-      }
-      if (state.userInput.length >= 12) {
-        state.points += 5;
-        state.feedbackText += ' Good job for selecting a safe password';
-      } else {
-        state.points -= 5;
-        state.feedbackText +=
-          ' You’re making it too easy! The password you chose was too easy to guess and compute. A safe password should have a minimum length of 12.';
-      }
-      state.nextTaskId = 4;
-      state.nextScreenId = 'emails';
-      state.showFeedbackDialog = true;
+      state.userInput[payload.key] = payload.value;
     },
   },
 });

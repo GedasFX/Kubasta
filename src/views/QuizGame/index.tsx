@@ -28,10 +28,8 @@ export default function QuizGame() {
   );
 
   useEffect(() => {
-    dispatch(gameActions.setActiveTaskId({ id: 18 }));
-    dispatch(
-      gameActions.setActiveScreenId({ id: 'camera1' })
-    );
+    dispatch(gameActions.setActiveTaskId({ id: 20 }));
+    dispatch(gameActions.setActiveScreenId({ id: 'main' }));
   }, [dispatch]);
 
   useEffect(() => {
