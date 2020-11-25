@@ -2,18 +2,18 @@ import { TaskData } from '.';
 import { fromUrl } from '../components/AppImage';
 import { gameActions } from 'store/game';
 
-import attachment from 'assets/tasks/5/Email- Attachment.png';
+import netflixpassword from 'assets/tasks/9/Email- Netflix password.png';
 
-const task5data: TaskData = {
-    title: 'Malicious email attachment',
+const task9data: TaskData = {
+    title: 'Emails',
     setting:
-        'This email appears to be from an unknown sender.',
+        'It is time to read your emails. In your mailbox, there are several emails.',
     instructions:
-        'Investigate and decide on your course of action.',
-    description: 'Investigate and decide on your course of action.',
+        'Investigate them and decide on your course of action.',
+    description: 'Investigate them and decide on your course of action.',
     screens: {
-        attachment: {
-            component: fromUrl(attachment),
+        netflixpassword: {
+            component: fromUrl(netflixpassword),
             buttons:[
                 //reply button
                 {
@@ -22,7 +22,7 @@ const task5data: TaskData = {
                     onClick: (dispatch) => {
                         dispatch(gameActions.setFeedbackDialogText({text:"Do not engage in conversations with a scammer, you may not notice revealing valuable information about yourself."}));
                         dispatch(gameActions.updatePoints({points:-5}));
-                        dispatch(gameActions.setNextTaskAndScreen({nextScreenId:'link', nextTaskId:6}));
+                        dispatch(gameActions.setNextTaskAndScreen({nextScreenId:'', nextTaskId:}));
                         dispatch(gameActions.toggleFeedbackDialog());
                     }
                 },
@@ -33,7 +33,7 @@ const task5data: TaskData = {
                     onClick: (dispatch) => {
                         dispatch(gameActions.setFeedbackDialogText({text:"Smart! Reporting spam helps your email’s algorithms to recognize suspicious emails as spam."}));
                         dispatch(gameActions.updatePoints({points:10}));
-                        dispatch(gameActions.setNextTaskAndScreen({nextScreenId:'link', nextTaskId:6}));
+                        dispatch(gameActions.setNextTaskAndScreen({nextScreenId:'', nextTaskId:}));
                         dispatch(gameActions.toggleFeedbackDialog());
                     }
                 },
@@ -44,18 +44,7 @@ const task5data: TaskData = {
                     onClick: (dispatch) => {
                         dispatch(gameActions.setFeedbackDialogText({text:"Good! Ignoring suspicious emails is one way to do it."}));
                         dispatch(gameActions.updatePoints({points:5}));
-                        dispatch(gameActions.setNextTaskAndScreen({nextScreenId:'link', nextTaskId:6}));
-                        dispatch(gameActions.toggleFeedbackDialog());
-                    }
-                },
-                //attachment button
-                {
-                    position:{left:"24.609375%", top:"43.6111111%"},
-                    size: {width:"14.0625%", height:"5.5555556%"},
-                    onClick: (dispatch) => {
-                        dispatch(gameActions.setFeedbackDialogText({text:"Never download email attachments from unverified sources, attachments may contain hidden malware."}));
-                        dispatch(gameActions.updatePoints({points:-10}));
-                        dispatch(gameActions.setNextTaskAndScreen({nextScreenId:'link', nextTaskId:6}));
+                        dispatch(gameActions.setNextTaskAndScreen({nextScreenId:'', nextTaskId:}));
                         dispatch(gameActions.toggleFeedbackDialog());
                     }
                 },
@@ -74,4 +63,4 @@ const task5data: TaskData = {
     },
 };
 
-export default task5data;
+export default task9data;
