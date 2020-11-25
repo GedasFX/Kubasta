@@ -6,7 +6,7 @@ import camera1 from 'assets/tasks/18/Websites-Camera 1.png';
 import camera2 from 'assets/tasks/18/Websites- Camera 2.png';
 
 const task18data: TaskData = {
-  title: 'Locked computer',
+  title: 'Camera',
   setting: 'You are browsing trough cute dog pics',
   instructions:
     'This random website is asking permission to use your camera. What will you do?',
@@ -26,6 +26,10 @@ const task18data: TaskData = {
               gameActions.openFeedbackDialog({
                 text:
                   'Be careful! You shouldn’t allow websites to access everything they ask for, always think – why does this website need to use my camera?',
+                next: {
+                  taskId: 19,
+                  screenId: 'ransomware',
+                },
               })
             );
           },
@@ -41,6 +45,10 @@ const task18data: TaskData = {
               gameActions.openFeedbackDialog({
                 text:
                   'Great! You should only allow access when you know you need to use the camera.',
+                next: {
+                  taskId: 19,
+                  screenId: 'ransomware',
+                },
               })
             );
           },
@@ -56,6 +64,10 @@ const task18data: TaskData = {
               gameActions.openFeedbackDialog({
                 text:
                   'Good! Clicking block will never make this pop up, but as long as you never click allow you are safe.',
+                next: {
+                  taskId: 19,
+                  screenId: 'ransomware',
+                },
               })
             );
           },

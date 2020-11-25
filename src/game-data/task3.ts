@@ -29,8 +29,8 @@ const task1data: TaskData = {
             const password = state.userInput['task3password'];
 
             let feedbackText =
-              'Good job for turning on Two-Factor-Verification (2FV).';
-            let points = 10;
+              'You did not care to turn on Two-Factor-Verification (2FV)? Attackers will have access to your account in no time.';
+            let points = 0;
 
             if (password.length >= 12) {
               points += 5;
@@ -60,7 +60,7 @@ const task1data: TaskData = {
             const password = state.userInput['task3password'];
 
             let feedbackText =
-              'You did not care to turn on Two-Factor-Verification (2FV)? Attackers will have access to your account in no time.';
+              'Good job for turning on Two-Factor-Verification (2FV).';
             let points = 10;
 
             if (password.length >= 12) {
