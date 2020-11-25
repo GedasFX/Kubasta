@@ -74,7 +74,7 @@ export default function TaskDescriptionPanel() {
           buttons={activeTask?.buttons}
         />
       </Paper>
-      <Button onClick={() => setPanelVisible(!panelVisible)}>
+      <Button onClick={() => setPanelVisible(!panelVisible)} color="primary">
         <DoubleArrow
           className={styles.drawerBtn}
           style={{ transform: panelVisible ? 'rotate(180deg)' : '' }}

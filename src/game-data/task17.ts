@@ -21,6 +21,7 @@ const task17data: TaskData = {
           position: { left: '30.234375%', top: '64.7222222%' },
           size: { width: '3.90625%', height: '6.9444444%' },
           onClick: ({ dispatch }) => {
+            dispatch(gameActions.updatePoints({ points: -5 }));
             dispatch(
               gameActions.openFeedbackDialog({
                 title: 'Poor choice!',
@@ -36,6 +37,7 @@ const task17data: TaskData = {
           position: { left: '38.984375%', top: '64.7222222%' },
           size: { width: '3.90625%', height: '6.9444444%' },
           onClick: ({ dispatch }) => {
+            dispatch(gameActions.updatePoints({ points: 5 }));
             dispatch(
               gameActions.openFeedbackDialog({
                 title: 'Nice!',
@@ -51,6 +53,7 @@ const task17data: TaskData = {
           position: { left: '47.734375%', top: '64.7222222%' },
           size: { width: '3.90625%', height: '6.9444444%' },
           onClick: ({ dispatch }) => {
+            dispatch(gameActions.updatePoints({ points: -5 }));
             dispatch(
               gameActions.openFeedbackDialog({
                 title: 'Be careful!',
@@ -66,6 +69,7 @@ const task17data: TaskData = {
           position: { left: '56.484375%', top: '64.7222222%' },
           size: { width: '3.90625%', height: '6.9444444%' },
           onClick: ({ dispatch }) => {
+            dispatch(gameActions.updatePoints({ points: 5 }));
             dispatch(
               gameActions.openFeedbackDialog({
                 title: 'Nice!',
@@ -81,6 +85,7 @@ const task17data: TaskData = {
           position: { left: '65.234375%', top: '64.7222222%' },
           size: { width: '3.90625%', height: '6.9444444%' },
           onClick: ({ dispatch }) => {
+            dispatch(gameActions.updatePoints({ points: 5 }));
             dispatch(
               gameActions.openFeedbackDialog({
                 title: 'Be careful!',

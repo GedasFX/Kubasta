@@ -16,7 +16,15 @@ const getLoseText = () => {
 };
 
 const getWinText = (points: number) => {
-  return `Congratulations! You have managed to survive until the end of the game. You have started this journey with 150 points and ended up leaving with ${points}. If you think you can do better, feel free to try again!`;
+  let base = `Congratulations! You have managed to survive until the end of the game. You have started this journey with 100 points and ended up leaving with ${points}`;
+  base +=
+    points >= 260
+      ? ', the maximum possible in this game. You are truly a cybersecurity expert.'
+      : `, which is ${
+          260 - points
+        } short form the maximum. If you think you can do better, feel free to try again!`;
+
+  return base;
 };
 
 export default function GameOverDialog() {

@@ -23,8 +23,7 @@ export default function CustomizedProgressBar() {
   const [progress, setProgress] = React.useState(50);
   const gameState = useSelector((state: AppState) => state.game);
   useEffect(() => {
-    const progress = (gameState.points / 300) * 100;
-    setProgress(progress);
+    setProgress((gameState.points / 260) * 100);
   }, [gameState.points]);
   return (
     <div>
