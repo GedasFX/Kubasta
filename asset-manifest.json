@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Kubasta/static/css/main.3372a6f8.chunk.css",
-    "main.js": "/Kubasta/static/js/main.2d6c58ef.chunk.js",
-    "main.js.map": "/Kubasta/static/js/main.2d6c58ef.chunk.js.map",
+    "main.js": "/Kubasta/static/js/main.14833fad.chunk.js",
+    "main.js.map": "/Kubasta/static/js/main.14833fad.chunk.js.map",
     "runtime-main.js": "/Kubasta/static/js/runtime-main.13d037f9.js",
     "runtime-main.js.map": "/Kubasta/static/js/runtime-main.13d037f9.js.map",
-    "static/js/2.27ee4f67.chunk.js": "/Kubasta/static/js/2.27ee4f67.chunk.js",
-    "static/js/2.27ee4f67.chunk.js.map": "/Kubasta/static/js/2.27ee4f67.chunk.js.map",
+    "static/js/2.031ce749.chunk.js": "/Kubasta/static/js/2.031ce749.chunk.js",
+    "static/js/2.031ce749.chunk.js.map": "/Kubasta/static/js/2.031ce749.chunk.js.map",
     "index.html": "/Kubasta/index.html",
     "static/css/main.3372a6f8.chunk.css.map": "/Kubasta/static/css/main.3372a6f8.chunk.css.map",
-    "static/js/2.27ee4f67.chunk.js.LICENSE.txt": "/Kubasta/static/js/2.27ee4f67.chunk.js.LICENSE.txt",
+    "static/js/2.031ce749.chunk.js.LICENSE.txt": "/Kubasta/static/js/2.031ce749.chunk.js.LICENSE.txt",
     "static/media/Email- Attachment.e9f8a7bb.png": "/Kubasta/static/media/Email- Attachment.e9f8a7bb.png",
     "static/media/Email- Blackmail.936ac049.png": "/Kubasta/static/media/Email- Blackmail.936ac049.png",
     "static/media/Email- Emails.bb9c0c2b.png": "/Kubasta/static/media/Email- Emails.bb9c0c2b.png",
@@ -31,8 +31,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.13d037f9.js",
-    "static/js/2.27ee4f67.chunk.js",
+    "static/js/2.031ce749.chunk.js",
     "static/css/main.3372a6f8.chunk.css",
-    "static/js/main.2d6c58ef.chunk.js"
+    "static/js/main.14833fad.chunk.js"
   ]
 }
