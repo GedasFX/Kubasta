@@ -11,6 +11,7 @@ import desktopnetworknotconnected from 'assets/tasks/1/desktopnetworknotconnecte
 import pressonopennetwork from 'assets/tasks/1/pressonopennetwork.png';
 import pressonsecurenetwork from 'assets/tasks/1/pressonsecurenetwork.png';
 import typeinpassword from 'assets/tasks/1/typeinpassword.png';
+import welcome from 'assets/tasks/1/welcome_screen.png'
 
 const task1data: TaskData = {
   title: 'Connect to Network',
@@ -20,6 +21,20 @@ const task1data: TaskData = {
     'To go online you need to connect to the network. This location has both an open and a password-protected network. Which one do you choose?',
   description: 'Connect safely to the internet',
   screens: {
+    welcome: {
+      component: fromUrl(welcome),
+      buttons: [
+        {
+        "position":{"top":"67.16%","left":"41.18%"},
+          "size":{"height":"17.06%","width":"17.55%"},
+          onClick: ({ dispatch }) => {
+            dispatch(
+                gameActions.setActiveScreenId({ id: 'desktopnetworknotconnected' })
+            );
+          },
+        }
+      ]
+    },
     desktopnetworknotconnected: {
       component: fromUrl(desktopnetworknotconnected),
       buttons: [
