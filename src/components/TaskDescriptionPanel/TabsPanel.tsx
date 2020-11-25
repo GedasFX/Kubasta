@@ -1,8 +1,19 @@
 import React, { PropsWithChildren } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Info, QuestionAnswer, List } from '@material-ui/icons';
-import { Box, Paper, Tab, Tabs, Typography } from '@material-ui/core';
+import {
+  Box,
+  Button,
+  Grid,
+  Paper,
+  Tab,
+  Tabs,
+  Typography,
+} from '@material-ui/core';
 import VerticalStepper from 'components/Stepper';
+import { ActionProps } from 'game-data';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppState } from 'store';
 
 function TabPanel(
   props: PropsWithChildren<{
@@ -25,9 +36,13 @@ const useStyles = makeStyles((theme) => ({
 
 export default function TabsPanel(props: {
   info: { title: string; setting?: string; instructions?: string };
+  buttons?: { text: string; onClick?: (props: ActionProps) => void }[];
 }) {
   const classes = useStyles();
   const [activeTab, setActiveTab] = React.useState(2);
+
+  const dispatch = useDispatch();
+  const gameState = useSelector((state: AppState) => state.game);
 
   return (
     <>
@@ -54,6 +69,25 @@ export default function TabsPanel(props: {
         <Typography gutterBottom variant="body2">
           {props.info.instructions}
         </Typography>
+        {props.buttons ? (
+          <Grid container spacing={1}>
+            {props.buttons.map((b) => (
+              <Grid item xs={6}>
+                <Button
+                  fullWidth
+                  variant="outlined"
+                  onClick={() => {
+                    if (b.onClick) {
+                      b.onClick({ dispatch, state: gameState });
+                    }
+                  }}
+                >
+                  {b.text}
+                </Button>
+              </Grid>
+            ))}
+          </Grid>
+        ) : null}
       </TabPanel>
       <TabPanel activeTabId={activeTab} tabId={1}>
         <VerticalStepper />

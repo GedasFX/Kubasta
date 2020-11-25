@@ -64,6 +64,7 @@ export default function TaskDescriptionPanel() {
             instructions: activeTask?.instructions,
             setting: activeTask?.setting,
           }}
+          buttons={activeTask?.buttons}
         />
       </Paper>
       <Button onClick={() => setPanelVisible(!panelVisible)}>

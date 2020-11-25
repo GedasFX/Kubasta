@@ -17,6 +17,7 @@ export interface TaskData {
   instructions?: string;
   description: string;
   screens: { [key: string]: ScreenData };
+  buttons?: { text: string; onClick?: (props: ActionProps) => void }[];
 }
 
 export type ScreenElement<T> = {

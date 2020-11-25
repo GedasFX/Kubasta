@@ -247,6 +247,38 @@ const task1data: TaskData = {
       ],
     },
   },
+  buttons: [
+    {
+      text: 'dawdawa',
+      onClick: ({ dispatch, state }) => {
+        console.log(dispatch, state);
+      },
+    },
+    {
+      text: 'dawdawa',
+      onClick: ({ dispatch, state }) => {
+        console.log(dispatch, state);
+      },
+    },
+    {
+      text: 'dawdawa',
+      onClick: ({ dispatch, state }) => {
+        console.log(dispatch, state);
+      },
+    },
+    {
+      text: 'dawdawa',
+      onClick: ({ dispatch, state }) => {
+        console.log(dispatch, state);
+      },
+    },
+    {
+      text: 'dawdawa',
+      onClick: ({ dispatch, state }) => {
+        console.log(dispatch, state);
+      },
+    },
+  ],
 };
 
 export default task1data;
