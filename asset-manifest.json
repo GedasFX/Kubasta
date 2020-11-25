@@ -1,15 +1,17 @@
 {
   "files": {
     "main.css": "/Kubasta/static/css/main.3372a6f8.chunk.css",
-    "main.js": "/Kubasta/static/js/main.a382a9dc.chunk.js",
-    "main.js.map": "/Kubasta/static/js/main.a382a9dc.chunk.js.map",
+    "main.js": "/Kubasta/static/js/main.77a8b1e4.chunk.js",
+    "main.js.map": "/Kubasta/static/js/main.77a8b1e4.chunk.js.map",
     "runtime-main.js": "/Kubasta/static/js/runtime-main.13d037f9.js",
     "runtime-main.js.map": "/Kubasta/static/js/runtime-main.13d037f9.js.map",
-    "static/js/2.5b5319d7.chunk.js": "/Kubasta/static/js/2.5b5319d7.chunk.js",
-    "static/js/2.5b5319d7.chunk.js.map": "/Kubasta/static/js/2.5b5319d7.chunk.js.map",
+    "static/css/2.9b0ee15b.chunk.css": "/Kubasta/static/css/2.9b0ee15b.chunk.css",
+    "static/js/2.622b112d.chunk.js": "/Kubasta/static/js/2.622b112d.chunk.js",
+    "static/js/2.622b112d.chunk.js.map": "/Kubasta/static/js/2.622b112d.chunk.js.map",
     "index.html": "/Kubasta/index.html",
+    "static/css/2.9b0ee15b.chunk.css.map": "/Kubasta/static/css/2.9b0ee15b.chunk.css.map",
     "static/css/main.3372a6f8.chunk.css.map": "/Kubasta/static/css/main.3372a6f8.chunk.css.map",
-    "static/js/2.5b5319d7.chunk.js.LICENSE.txt": "/Kubasta/static/js/2.5b5319d7.chunk.js.LICENSE.txt",
+    "static/js/2.622b112d.chunk.js.LICENSE.txt": "/Kubasta/static/js/2.622b112d.chunk.js.LICENSE.txt",
     "static/media/Email- Attachment.e9f8a7bb.png": "/Kubasta/static/media/Email- Attachment.e9f8a7bb.png",
     "static/media/Email- Blackmail.936ac049.png": "/Kubasta/static/media/Email- Blackmail.936ac049.png",
     "static/media/Email- Emails.bb9c0c2b.png": "/Kubasta/static/media/Email- Emails.bb9c0c2b.png",
@@ -45,8 +47,9 @@
   },
   "entrypoints": [
     "static/js/runtime-main.13d037f9.js",
-    "static/js/2.5b5319d7.chunk.js",
+    "static/css/2.9b0ee15b.chunk.css",
+    "static/js/2.622b112d.chunk.js",
     "static/css/main.3372a6f8.chunk.css",
-    "static/js/main.a382a9dc.chunk.js"
+    "static/js/main.77a8b1e4.chunk.js"
   ]
 }
