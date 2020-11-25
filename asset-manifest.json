@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Kubasta/static/css/main.3372a6f8.chunk.css",
-    "main.js": "/Kubasta/static/js/main.afbfe84b.chunk.js",
-    "main.js.map": "/Kubasta/static/js/main.afbfe84b.chunk.js.map",
+    "main.js": "/Kubasta/static/js/main.c1153541.chunk.js",
+    "main.js.map": "/Kubasta/static/js/main.c1153541.chunk.js.map",
     "runtime-main.js": "/Kubasta/static/js/runtime-main.13d037f9.js",
     "runtime-main.js.map": "/Kubasta/static/js/runtime-main.13d037f9.js.map",
     "static/js/2.5b5319d7.chunk.js": "/Kubasta/static/js/2.5b5319d7.chunk.js",
@@ -16,8 +16,10 @@
     "static/media/Email- Link.56bb2123.png": "/Kubasta/static/media/Email- Link.56bb2123.png",
     "static/media/Email- Money transfer.5d21133f.png": "/Kubasta/static/media/Email- Money transfer.5d21133f.png",
     "static/media/Email- Netflix password.c54ac902.png": "/Kubasta/static/media/Email- Netflix password.c54ac902.png",
+    "static/media/Websites- Camera 2.0a53c219.png": "/Kubasta/static/media/Websites- Camera 2.0a53c219.png",
     "static/media/Websites- NY times.e790cd7a.png": "/Kubasta/static/media/Websites- NY times.e790cd7a.png",
     "static/media/Websites-Amazon2.a6cb559c.png": "/Kubasta/static/media/Websites-Amazon2.a6cb559c.png",
+    "static/media/Websites-Camera 1.a3fd98e4.png": "/Kubasta/static/media/Websites-Camera 1.a3fd98e4.png",
     "static/media/Websites-Facebouk.187b5120.png": "/Kubasta/static/media/Websites-Facebouk.187b5120.png",
     "static/media/Websites-MitM(2).219c5a5e.png": "/Kubasta/static/media/Websites-MitM(2).219c5a5e.png",
     "static/media/Websites-MitM.54100ae5.png": "/Kubasta/static/media/Websites-MitM.54100ae5.png",
@@ -36,12 +38,14 @@
     "static/media/discoverableonnetwork.f641c86c.png": "/Kubasta/static/media/discoverableonnetwork.f641c86c.png",
     "static/media/pressonopennetwork.218e43b6.png": "/Kubasta/static/media/pressonopennetwork.218e43b6.png",
     "static/media/pressonsecurenetwork.166db23d.png": "/Kubasta/static/media/pressonsecurenetwork.166db23d.png",
+    "static/media/ransomwaredesktop.d3c058bc.png": "/Kubasta/static/media/ransomwaredesktop.d3c058bc.png",
+    "static/media/task16desktoppluspopupnew.5854a7e8.png": "/Kubasta/static/media/task16desktoppluspopupnew.5854a7e8.png",
     "static/media/typeinpassword.c41db31f.png": "/Kubasta/static/media/typeinpassword.c41db31f.png"
   },
   "entrypoints": [
     "static/js/runtime-main.13d037f9.js",
     "static/js/2.5b5319d7.chunk.js",
     "static/css/main.3372a6f8.chunk.css",
-    "static/js/main.afbfe84b.chunk.js"
+    "static/js/main.c1153541.chunk.js"
   ]
 }
