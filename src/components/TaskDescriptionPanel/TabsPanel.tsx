@@ -64,6 +64,8 @@ export default function TabsPanel(props: {
         </Typography>
         <Typography variant="body1" gutterBottom>
           Check out other tabs in the sidebar to see your current assignment.
+          This panel can be opened and closed whenever you please. Some tasks
+          will be performed in this window.
         </Typography>
         <Typography variant="body2" gutterBottom>
           Cyber awareness training tool for ITC8210HACS, TalTech.

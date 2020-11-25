@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function TaskDescriptionPanel() {
-  const [panelVisible, setPanelVisible] = useState(false);
+  const [panelVisible, setPanelVisible] = useState(true);
   const [width, setWidth] = useState(0);
   const styles = useStyles();
 
