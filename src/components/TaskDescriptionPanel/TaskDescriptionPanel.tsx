@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function TaskDescriptionPanel() {
-  const [panelVisible, setPanelVisible] = useState(true);
+  const [panelVisible, setPanelVisible] = useState(false);
   const [width, setWidth] = useState(0);
   const styles = useStyles();
 
@@ -46,6 +46,13 @@ export default function TaskDescriptionPanel() {
 
   useEffect(() => {
     setActiveTask(activeTaskId ? gameTasks[activeTaskId] : undefined);
+  }, [activeTaskId]);
+
+  // Every time a task changes, open up the sidebar.
+  useEffect(() => {
+    if (activeTaskId > 0) {
+      setPanelVisible(true);
+    }
   }, [activeTaskId]);
 
   useEffect(() => {

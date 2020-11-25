@@ -8,8 +8,8 @@ const slice = createSlice({
   initialState: {
     points: 150,
 
-    activeTaskId: firstTaskId,
-    activeScreenId: firstScreenId,
+    activeTaskId: '0',
+    activeScreenId: 'welcome',
 
     showFeedbackDialog: false,
     feedbackText: '',

@@ -1,6 +1,7 @@
 import { AppDispatch } from '../store';
 import gameReducer from 'store/game';
 
+import task0data from './task0';
 import task1data from './task1';
 import task2data from './task2';
 import task3data from './task3';
@@ -54,6 +55,7 @@ export interface ScreenData {
 }
 
 const gameTasks: { [taskId: string]: TaskData } = {
+  0: task0data,
   1: task1data,
   2: task2data,
   3: task3data,

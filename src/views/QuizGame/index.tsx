@@ -21,18 +21,10 @@ const useStyles = makeStyles((theme) => ({
 export default function QuizGame() {
   const classes = useStyles();
 
-  const dispatch = useDispatch();
   const gameState = useSelector((state: AppState) => state.game);
   const [screenData, setScreenData] = useState(
     undefined as ScreenData | undefined
   );
-
-  useEffect(() => {
-    dispatch(gameActions.setActiveTaskId({ id: 1 }));
-    dispatch(
-        gameActions.setActiveScreenId({ id: 'welcome' })
-    );
-  }, [dispatch]);
 
   useEffect(() => {
     setScreenData(

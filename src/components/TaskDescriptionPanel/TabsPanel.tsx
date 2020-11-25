@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Info, QuestionAnswer, List } from '@material-ui/icons';
 import {
@@ -51,6 +51,12 @@ export default function TabsPanel(props: {
 
   const dispatch = useDispatch();
   const gameState = useSelector((state: AppState) => state.game);
+
+  useEffect(() => {
+    if (gameState.activeTaskId > 0) {
+      setActiveTab(0);
+    }
+  }, [gameState.activeTaskId]);
 
   return (
     <>
