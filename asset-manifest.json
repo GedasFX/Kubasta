@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Kubasta/static/css/main.3372a6f8.chunk.css",
-    "main.js": "/Kubasta/static/js/main.14833fad.chunk.js",
-    "main.js.map": "/Kubasta/static/js/main.14833fad.chunk.js.map",
+    "main.js": "/Kubasta/static/js/main.77909018.chunk.js",
+    "main.js.map": "/Kubasta/static/js/main.77909018.chunk.js.map",
     "runtime-main.js": "/Kubasta/static/js/runtime-main.13d037f9.js",
     "runtime-main.js.map": "/Kubasta/static/js/runtime-main.13d037f9.js.map",
     "static/js/2.031ce749.chunk.js": "/Kubasta/static/js/2.031ce749.chunk.js",
@@ -33,6 +33,6 @@
     "static/js/runtime-main.13d037f9.js",
     "static/js/2.031ce749.chunk.js",
     "static/css/main.3372a6f8.chunk.css",
-    "static/js/main.14833fad.chunk.js"
+    "static/js/main.77909018.chunk.js"
   ]
 }
