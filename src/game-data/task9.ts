@@ -19,13 +19,17 @@ const task9data: TaskData = {
           position: { left: '75.78125%', top: '9.5333333%' },
           size: { width: '6.71875%', height: '4.5833333%' },
           onClick: ({ dispatch }) => {
-            dispatch(gameActions.updatePoints({ points: -5 }));
             dispatch(
               gameActions.openFeedbackDialog({
                 text:
                   'Do not engage in conversations with a scammer, you may not notice revealing valuable information about yourself.',
+                next: {
+                  taskId: 1,
+                  screenId: 'desktopnetworknotconnected',
+                },
               })
             );
+            dispatch(gameActions.updatePoints({ points: -5 }));
           },
         },
         //report spam button
@@ -37,6 +41,10 @@ const task9data: TaskData = {
               gameActions.openFeedbackDialog({
                 text:
                   'Smart! Reporting spam helps your email’s algorithms to recognize suspicious emails as spam.',
+                next: {
+                  taskId: 1,
+                  screenId: 'desktopnetworknotconnected',
+                },
               })
             );
             dispatch(gameActions.updatePoints({ points: 10 }));
@@ -50,25 +58,13 @@ const task9data: TaskData = {
             dispatch(
               gameActions.openFeedbackDialog({
                 text: 'Good! Ignoring suspicious emails is one way to do it.',
-              })
-            );
-            dispatch(gameActions.updatePoints({ points: 5 }));
-          },
-        },
-        {
-          position: { left: '0%', top: '88.88%' },
-          size: { width: '100%', height: '11.11%' },
-          onClick: ({ dispatch }) => {
-            dispatch(
-              gameActions.openFeedbackDialog({
-                text:
-                  'Game over! Don’t get tricked by malicious ads. That’s how you actually infect your computer.',
                 next: {
                   taskId: 1,
                   screenId: 'desktopnetworknotconnected',
                 },
               })
             );
+            dispatch(gameActions.updatePoints({ points: 5 }));
           },
         },
       ],
