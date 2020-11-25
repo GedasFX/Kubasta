@@ -22,7 +22,7 @@ const task9data: TaskData = {
                     onClick: (dispatch) => {
                         dispatch(gameActions.setFeedbackDialogText({text:"Do not engage in conversations with a scammer, you may not notice revealing valuable information about yourself."}));
                         dispatch(gameActions.updatePoints({points:-5}));
-                        dispatch(gameActions.setNextTaskAndScreen({nextScreenId:'', nextTaskId:}));
+                        dispatch(gameActions.setNextTaskAndScreen({nextScreenId:'desktopnetworknotconnected', nextTaskId:1}));
                         dispatch(gameActions.toggleFeedbackDialog());
                     }
                 },
@@ -33,7 +33,7 @@ const task9data: TaskData = {
                     onClick: (dispatch) => {
                         dispatch(gameActions.setFeedbackDialogText({text:"Smart! Reporting spam helps your email’s algorithms to recognize suspicious emails as spam."}));
                         dispatch(gameActions.updatePoints({points:10}));
-                        dispatch(gameActions.setNextTaskAndScreen({nextScreenId:'', nextTaskId:}));
+                        dispatch(gameActions.setNextTaskAndScreen({nextScreenId:'desktopnetworknotconnected', nextTaskId:1}));
                         dispatch(gameActions.toggleFeedbackDialog());
                     }
                 },
@@ -44,7 +44,7 @@ const task9data: TaskData = {
                     onClick: (dispatch) => {
                         dispatch(gameActions.setFeedbackDialogText({text:"Good! Ignoring suspicious emails is one way to do it."}));
                         dispatch(gameActions.updatePoints({points:5}));
-                        dispatch(gameActions.setNextTaskAndScreen({nextScreenId:'', nextTaskId:}));
+                        dispatch(gameActions.setNextTaskAndScreen({nextScreenId:'desktopnetworknotconnected', nextTaskId:1}));
                         dispatch(gameActions.toggleFeedbackDialog());
                     }
                 },
