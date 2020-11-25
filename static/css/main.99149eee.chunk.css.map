@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/styles/styles.css"],"names":[],"mappings":"AAAA,UAEE,WACF,CAEA,gBAGE,YACF","file":"main.99149eee.chunk.css","sourcesContent":["html,\r\nbody {\r\n  height: 100%;\r\n}\r\n\r\n*,\r\n*:focus,\r\n*:hover {\r\n  outline: none;\r\n}\r\n"]}
