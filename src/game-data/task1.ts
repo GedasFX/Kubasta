@@ -26,7 +26,7 @@ const task1data: TaskData = {
         {
           position: { left: '92%', top: '94.5%' },
           size: { width: '2%', height: '4%' },
-          onClick: (dispatch) => {
+          onClick: ({ dispatch }) => {
             dispatch(
               gameActions.setActiveScreenId({ id: 'availablenetworks' })
             );
@@ -40,7 +40,7 @@ const task1data: TaskData = {
         {
           position: { left: '92%', top: '94.5%' },
           size: { width: '2%', height: '4%' },
-          onClick: (dispatch) => {
+          onClick: ({ dispatch }) => {
             dispatch(
               gameActions.setActiveScreenId({
                 id: 'desktopnetworknotconnected',
@@ -51,7 +51,7 @@ const task1data: TaskData = {
         {
           position: { left: '77%', top: '28%' },
           size: { width: '22%', height: '8%' },
-          onClick: (dispatch) => {
+          onClick: ({ dispatch }) => {
             dispatch(
               gameActions.setActiveScreenId({ id: 'pressonopennetwork' })
             );
@@ -60,7 +60,7 @@ const task1data: TaskData = {
         {
           position: { left: '77%', top: '36%' },
           size: { width: '22%', height: '8%' },
-          onClick: (dispatch) => {
+          onClick: ({ dispatch }) => {
             dispatch(
               gameActions.setActiveScreenId({ id: 'pressonsecurenetwork' })
             );
@@ -75,7 +75,7 @@ const task1data: TaskData = {
         {
           position: { left: '92%', top: '94.5%' },
           size: { width: '2%', height: '4%' },
-          onClick: (dispatch) => {
+          onClick: ({ dispatch }) => {
             dispatch(
               gameActions.setActiveScreenId({
                 id: 'desktopnetworknotconnected',
@@ -87,7 +87,7 @@ const task1data: TaskData = {
         {
           position: { top: '48.5%', left: '89.5%' },
           size: { width: '9.5%', height: '4%' },
-          onClick: (dispatch) => {
+          onClick: ({ dispatch }) => {
             dispatch(gameActions.setActiveScreenId({ id: 'typeinpassword' }));
           },
         },
@@ -95,7 +95,7 @@ const task1data: TaskData = {
         {
           position: { top: '28.1%', left: '76.4%' },
           size: { width: '24%', height: '8%' },
-          onClick: (dispatch) => {
+          onClick: ({ dispatch }) => {
             dispatch(
               gameActions.setActiveScreenId({ id: 'pressonopennetwork' })
             );
@@ -110,7 +110,7 @@ const task1data: TaskData = {
         {
           position: { left: '92%', top: '94.5%' },
           size: { width: '2%', height: '4%' },
-          onClick: (dispatch) => {
+          onClick: ({ dispatch }) => {
             dispatch(
               gameActions.setActiveScreenId({
                 id: 'desktopnetworknotconnected',
@@ -122,7 +122,7 @@ const task1data: TaskData = {
         {
           position: { left: '76.6%', top: '50.9%' },
           size: { width: '24%', height: '8%' },
-          onClick: (dispatch) => {
+          onClick: ({ dispatch }) => {
             dispatch(
               gameActions.setActiveScreenId({ id: 'pressonsecurenetwork' })
             );
@@ -132,17 +132,21 @@ const task1data: TaskData = {
         {
           position: { left: '89.5%', top: '45.45%' },
           size: { width: '9.5%', height: '3.5%' },
-          onClick: (dispatch) => {
-            const feedbackText =
-              'Oh no! Open networks should be avoided whenever possible. Accessing sensitive information on such networks can result in that data getting compromised, e.g. login data to your banking. If given the choice, it is usually better to connect to a secured network.';
-
+          onClick: ({ dispatch }) => {
             dispatch(gameActions.updatePoints({ points: POINTS_WRONG_ANSWER }));
             dispatch(
               gameActions.setActiveScreenId({ id: 'connectedopennetwork' })
             );
-            dispatch(gameActions.setFeedbackDialogText({ text: feedbackText }));
-            dispatch(gameActions.toggleFeedbackDialog());
-            console.log('pressed on open button');
+            dispatch(
+              gameActions.openFeedbackDialog({
+                text:
+                  'Oh no! Open networks should be avoided whenever possible. Accessing sensitive information on such networks can result in that data getting compromised, e.g. login data to your banking. If given the choice, it is usually better to connect to a secured network.',
+                next: {
+                  taskId: 1,
+                  screenId: 'desktopnetworknotconnected',
+                },
+              })
+            );
           },
         },
       ],
@@ -154,7 +158,7 @@ const task1data: TaskData = {
         {
           position: { left: '92%', top: '94.5%' },
           size: { width: '2%', height: '4%' },
-          onClick: (dispatch) => {
+          onClick: ({ dispatch }) => {
             dispatch(
               gameActions.setActiveScreenId({
                 id: 'desktopnetworknotconnected',
@@ -166,7 +170,7 @@ const task1data: TaskData = {
         {
           position: { top: '28.1%', left: '76.4%' },
           size: { width: '24%', height: '8%' },
-          onClick: (dispatch) => {
+          onClick: ({ dispatch }) => {
             dispatch(
               gameActions.setActiveScreenId({ id: 'pressonopennetwork' })
             );
@@ -176,7 +180,7 @@ const task1data: TaskData = {
         {
           position: { top: '52.1%', left: '79.7%' },
           size: { width: '9.7%', height: '3.8%' },
-          onClick: (dispatch) => {
+          onClick: ({ dispatch }) => {
             dispatch(
               gameActions.setActiveScreenId({ id: 'discoverableonnetwork' })
             );
@@ -198,7 +202,7 @@ const task1data: TaskData = {
         {
           position: { left: '76.6%', top: '46.17%' },
           size: { width: '24%', height: '8%' },
-          onClick: (dispatch) => {
+          onClick: ({ dispatch }) => {
             dispatch(
               gameActions.setActiveScreenId({ id: 'pressonsecurenetwork' })
             );
@@ -223,12 +227,21 @@ const task1data: TaskData = {
         {
           position: { top: '59%', left: '89.5%' },
           size: { width: '9.7%', height: '3.8%' },
-          onClick: (dispatch) => {
-            dispatch(gameActions.setActiveScreenId({ id: 'connectedsecurenetwork' }));
-            dispatch(gameActions.updatePoints({points: 10}))
-            dispatch(gameActions.setNextTaskAndScreen({nextScreenId:'antiviruspopup', nextTaskId:2}))
-            dispatch(gameActions.setFeedbackDialogText({ text: "Good! It’s always better to leave attackers the least possible amount of attack surface, which you just did." }));
-            dispatch(gameActions.toggleFeedbackDialog());
+          onClick: ({ dispatch }) => {
+            dispatch(
+              gameActions.setActiveScreenId({ id: 'connectedsecurenetwork' })
+            );
+            dispatch(gameActions.updatePoints({ points: 10 }));
+            dispatch(
+              gameActions.openFeedbackDialog({
+                text:
+                  'Good! It’s always better to leave attackers the least possible amount of attack surface, which you just did.',
+                next: {
+                  screenId: 'antiviruspopup',
+                  taskId: 2,
+                },
+              })
+            );
           },
         },
       ],

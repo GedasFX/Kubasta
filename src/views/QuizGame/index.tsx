@@ -8,7 +8,6 @@ import { gameActions } from '../../store/game';
 import gameItems, { ScreenData } from '../../game-data';
 import FeedbackDialog from '../../components/FeedbackDialog';
 import CustomizedProgressBar from '../../components/ProgressBar';
-import { useDialogService } from 'contexts/DialogServiceContext';
 
 const useStyles = makeStyles((theme) => ({
   imgContainer: {
@@ -25,16 +24,13 @@ export default function QuizGame() {
   const dispatch = useDispatch();
   const gameState = useSelector((state: AppState) => state.game);
   const [screenData, setScreenData] = useState(
-      undefined as ScreenData | undefined
+    undefined as ScreenData | undefined
   );
 
-  const dialogService = useDialogService();
-
   useEffect(() => {
-    dispatch(gameActions.initializeFeedbackDialog())
     dispatch(gameActions.setActiveTaskId({ id: 1 }));
     dispatch(
-        gameActions.setActiveScreenId({ id: 'desktopnetworknotconnected' })
+      gameActions.setActiveScreenId({ id: 'desktopnetworknotconnected' })
     );
   }, [dispatch]);
 
@@ -45,12 +41,6 @@ export default function QuizGame() {
         : undefined
     );
   }, [gameState.activeTaskId, gameState.activeScreenId]);
-
-  useEffect(() => {
-    setInterval(() => {
-      dialogService.showDialog({ id: 5 });
-    }, 1000);
-  }, [dialogService]);
 
   if (!screenData) {
     return null;
@@ -63,8 +53,7 @@ export default function QuizGame() {
       </Grid>
       <Grid item xs={12} className={classes.imgContainer}>
         <ActionableImage {...screenData} />
-              <FeedbackDialog
-        />
+        <FeedbackDialog />
       </Grid>
     </Grid>
   );

@@ -1,13 +1,15 @@
+import { ActionProps } from 'game-data';
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { AppDispatch } from 'store';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppState } from 'store';
 
 export default function AppButton(props: {
   position: { top: number | string; left: number | string };
   size: { width: number | string; height: number | string };
-  onClick?: (dispatch: AppDispatch) => void;
+  onClick?: (props: ActionProps) => void;
 }) {
   const dispatch = useDispatch();
+  const gameState = useSelector((state: AppState) => state.game);
 
   return (
     <button
@@ -19,7 +21,7 @@ export default function AppButton(props: {
       }}
       onClick={() => {
         if (props.onClick) {
-          props.onClick(dispatch);
+          props.onClick({ dispatch, state: gameState });
         }
       }}
     ></button>

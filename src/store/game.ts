@@ -1,15 +1,21 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
+const firstScreenId = 'desktopnetworknotconnected';
+const firstTaskId = 1;
+
 const slice = createSlice({
   name: 'game',
   initialState: {
     points: 150,
 
+    activeTaskId: firstTaskId,
+    activeScreenId: firstScreenId,
+
     showFeedbackDialog: false,
     feedbackText: '',
   } as {
-    activeTaskId?: string | number;
-    activeScreenId?: string | number;
+    activeTaskId: string | number;
+    activeScreenId: string | number;
 
     points: number;
 
@@ -23,35 +29,48 @@ const slice = createSlice({
   reducers: {
     setActiveTaskId: (
       state,
-      { payload }: PayloadAction<{ id?: string | number }>
+      { payload }: PayloadAction<{ id: string | number }>
     ) => {
       state.activeTaskId = payload.id;
     },
     setActiveScreenId: (
       state,
-      { payload }: PayloadAction<{ id?: string | number }>
+      { payload }: PayloadAction<{ id: string | number }>
     ) => {
       state.activeScreenId = payload.id;
     },
-    toggleFeedbackDialog: (state) => {
+    closeFeedbackDialog: (state) => {
       state.showFeedbackDialog = !state.showFeedbackDialog;
     },
-    setFeedbackDialogText: (
+    openFeedbackDialog: (
       state,
-      { payload }: PayloadAction<{ text: string }>
+      {
+        payload,
+      }: PayloadAction<{
+        text: string;
+        next?: { taskId?: string | number; screenId?: string | number };
+      }>
     ) => {
+      state.showFeedbackDialog = true;
       state.feedbackText = payload.text;
+
+      state.nextTaskId = payload.next?.taskId ?? state.activeTaskId;
+      state.nextScreenId = payload.next?.screenId ?? state.activeScreenId;
     },
     updatePoints: (state, { payload }: PayloadAction<{ points: number }>) => {
       state.points = state.points + payload.points;
     },
-    setNextTaskAndScreen: (
-      state,
-      { payload }: PayloadAction<{ nextTaskId: number; nextScreenId: string }>
-    ) => {
-      state.nextTaskId = payload.nextTaskId;
-      state.nextScreenId = payload.nextScreenId;
+    gameOver: (state) => {
+      state.activeTaskId = firstTaskId;
+      state.activeScreenId = firstScreenId;
     },
+    // setNextTaskAndScreen: (
+    //   state,
+    //   { payload }: PayloadAction<{ nextTaskId: number; nextScreenId: string }>
+    // ) => {
+    //   state.nextTaskId = payload.nextTaskId;
+    //   state.nextScreenId = payload.nextScreenId;
+    // },
     setUserInput: (
       state,
       { payload }: PayloadAction<{ userInput: string }>
