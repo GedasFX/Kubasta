@@ -80,6 +80,7 @@ export default function ActionableImage(props: ScreenData) {
           size={t.size}
           type={t.type}
           key={i}
+          onChange={t.onChange}
         />
       ))}
     </div>

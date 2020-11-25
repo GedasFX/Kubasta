@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Dialog from '@material-ui/core/Dialog';
 import MuiDialogTitle from '@material-ui/core/DialogTitle';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -19,26 +19,36 @@ const DialogTitle = (props: {
   );
 };
 
-export default function FeedbackDialog() {
+export default function FeedbackDialog(
+) {
+    const gameState = useSelector((state: AppState) => state.game);
   const dispatch = useDispatch();
-  const gameState = useSelector((state: AppState) => state.game);
   const onConfirmation = function() {
       dispatch(gameActions.toggleFeedbackDialog())
-      dispatch(gameActions.setActiveTaskId({id: 2}));
-      dispatch(gameActions.setActiveScreenId({id: 'antiviruspopup'}));
+      console.log(gameState.nextScreenId);
+      console.log(gameState.nextTaskId);
+      dispatch(gameActions.setActiveTaskId({id: gameState.nextTaskId}));
+      dispatch(gameActions.setActiveScreenId({id: gameState.nextScreenId}));
 
   }
-  return (
+    const [isOpen, setIsOpen] = useState(false);
+    const [dialogText, setDialogText] = useState('');
+    useEffect(() => {
+        setIsOpen(gameState.showFeedbackDialog ? gameState.showFeedbackDialog: false);
+        setDialogText(gameState.feedbackText? gameState.feedbackText: '');
+    }, [gameState.showFeedbackDialog, gameState.feedbackText]);
+    return (
     <div>
-      <Dialog open={gameState.showFeedbackDialog ? gameState.showFeedbackDialog : false}>
-        <DialogTitle text={gameState.feedbackText}></DialogTitle>
-          <DialogActions>
-              <Button autoFocus onClick={onConfirmation} color="primary">
-                 Go to next task
-              </Button>
-          </DialogActions>
-      </Dialog>
+          <Dialog open={isOpen}>
+              <DialogTitle text={dialogText}></DialogTitle>
+              <DialogActions>
+                  <Button autoFocus onClick={onConfirmation} color="primary">
+                      Go to next task
+                  </Button>
+            </DialogActions>
+         </Dialog>
 
     </div>
   );
+
 }
