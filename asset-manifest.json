@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Kubasta/static/css/main.99149eee.chunk.css",
-    "main.js": "/Kubasta/static/js/main.699c371b.chunk.js",
-    "main.js.map": "/Kubasta/static/js/main.699c371b.chunk.js.map",
+    "main.js": "/Kubasta/static/js/main.ef066d2c.chunk.js",
+    "main.js.map": "/Kubasta/static/js/main.ef066d2c.chunk.js.map",
     "runtime-main.js": "/Kubasta/static/js/runtime-main.13d037f9.js",
     "runtime-main.js.map": "/Kubasta/static/js/runtime-main.13d037f9.js.map",
     "static/css/2.9b0ee15b.chunk.css": "/Kubasta/static/css/2.9b0ee15b.chunk.css",
@@ -13,7 +13,7 @@
     "static/css/main.99149eee.chunk.css.map": "/Kubasta/static/css/main.99149eee.chunk.css.map",
     "static/js/2.9f614d92.chunk.js.LICENSE.txt": "/Kubasta/static/js/2.9f614d92.chunk.js.LICENSE.txt",
     "static/media/Email- Attachment.e9f8a7bb.png": "/Kubasta/static/media/Email- Attachment.e9f8a7bb.png",
-    "static/media/Email- Blackmail.936ac049.png": "/Kubasta/static/media/Email- Blackmail.936ac049.png",
+    "static/media/Email- Blackmail.693d4b0e.png": "/Kubasta/static/media/Email- Blackmail.693d4b0e.png",
     "static/media/Email- Emails.bb9c0c2b.png": "/Kubasta/static/media/Email- Emails.bb9c0c2b.png",
     "static/media/Email- Link.56bb2123.png": "/Kubasta/static/media/Email- Link.56bb2123.png",
     "static/media/Email- Money transfer.5d21133f.png": "/Kubasta/static/media/Email- Money transfer.5d21133f.png",
@@ -51,6 +51,6 @@
     "static/css/2.9b0ee15b.chunk.css",
     "static/js/2.9f614d92.chunk.js",
     "static/css/main.99149eee.chunk.css",
-    "static/js/main.699c371b.chunk.js"
+    "static/js/main.ef066d2c.chunk.js"
   ]
 }
