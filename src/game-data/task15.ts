@@ -37,7 +37,7 @@ const task15data: TaskData = {
         dispatch(
           gameActions.openFeedbackDialog({
             title: 'Correct!',
-            text: 'You the wrong logo and URL!',
+            text: 'You noticed the wrong logo and URL!',
             next: { screenId: 'mitm', taskId: 16 },
           })
         );
