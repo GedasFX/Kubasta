@@ -14,6 +14,21 @@ const task15data: TaskData = {
   screens: {
     nytimes: {
       component: fromUrl(nytimes),
+      buttons: [
+        {
+          position: { top: '5.07%', left: '89.98%' },
+          size: { height: '3.44%', width: '7.94%' },
+          onClick: ({ dispatch }) => {
+            dispatch(
+              gameActions.openFeedbackDialog({
+                title: 'Adblock is useful!',
+                text:
+                  'Adblock not only hides annoying ads, it may also protect your from malicious ads that may cause actual harm. If you haven’t already, you should go to your browser extensions and enable Adblock on your browser.',
+              })
+            );
+          },
+        },
+      ],
     },
   },
   buttons: [
